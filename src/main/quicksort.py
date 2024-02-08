@@ -1,9 +1,40 @@
 import xml.etree.ElementTree as ET
 
 # Método que calcula la primera partición obtenida tras pivotar
+# unidireccionalmente con el primer elemento como pivote del algoritmo
+# de ordenación Quicksort
+# Autor: Mario García Martínez
+def quickSort_unidireccional(vector, inicio, fin):
+
+    # Copia del vector para no modificar el original
+    vectorResultado = list(vector)
+    pivote = vectorResultado[inicio]
+    # Primer y segundo puntero señalan a la posición posterior al pivote al comenzar
+    izq = inicio + 1
+    der = inicio + 1
+
+    # Siempre que el segundo puntero no haya avanzado hasta el final
+    while der <= fin:
+        # Si el valor al que señala el segundo puntero es menor o igual que el pivote
+        if vectorResultado[der] <= pivote:
+            # Se intercambian los valores a los que señalan el primer y segundo puntero
+            vectorResultado[izq], vectorResultado[der] = vectorResultado[der], vectorResultado[izq]
+            # Se desplaza la posición del primer puntero solo cuando se ha producido un intercambio
+            izq += 1
+        # Se desplaza la posición del segundo puntero siempre hasta finalizar
+        der += 1
+
+    #Tras finalizar se intercambia el pivote por el valor al que apunta el primer puntero (posición intermedia)
+    vectorResultado[inicio], vectorResultado[izq - 1] = vectorResultado[izq - 1], vectorResultado[inicio]
+
+    return vectorResultado, (izq - 1)
+
+
+# Método que calcula la primera partición obtenida tras pivotar
 # bidireccionalmente con el primer elemento como pivote del algoritmo
 # de ordenación Quicksort
 # Autor: Mario García Martínez
+
 def quickSort_bidireccional(vector, inicio, fin):
 
     # Copia del vector para no modificar el original
@@ -45,7 +76,9 @@ def quickSort_bidireccional(vector, inicio, fin):
 # Autor : Mario García Martínez
 def crear_pregunta_quicksort(vector):
 
+    # Obtenemos las soluciones de los 2 métodos para calcular la primera partición de Quicksort
     solucionBidireccional, finBidireccional = quickSort_bidireccional(vector, 0, (len(vector)-1) )
+    solucionUnidireccional , finUnidireccional = quickSort_unidireccional(vector, 0, (len(vector)-1) )
 
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
@@ -91,7 +124,7 @@ def crear_pregunta_quicksort(vector):
         ]]>
     """.format(''.join(['<td>{}</td>'.format(val) for val in vector]), # Visualización de vector en el enunciado
                ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in solucionBidireccional ]), # Solución 1 (Bidireccional)
-               ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in sorted(vector) ])) # Solución 2 (Unirrecional)
+               ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in solucionUnidireccional ])) # Solución 2 (Unirrecional)
 
     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
     text_generalfeedback = ET.SubElement(generalfeedback, "text")

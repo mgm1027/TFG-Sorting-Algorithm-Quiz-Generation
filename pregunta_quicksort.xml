@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz><question type="cloze"><name><text>Quicksort [37, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 86]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;21&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;td&gt;86&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores de los vectores resultantes al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt;, utilizando el primer elemento como pivote.&lt;/p&gt;
+        &lt;p&gt;Para el primer método de partición, bidireccional, en el que dos índices empiezan en los dos extremos y avanzan en sentidos opuestos:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%36:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%14:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%9:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%10:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%5:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%14:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%21:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%37:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%38:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%54:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%86:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Para el segundo método de partición, unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%5:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%14:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%9:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%10:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%14:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%21:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%36:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%37:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%38:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%54:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%86:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        ]]&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question></quiz>
