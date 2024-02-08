@@ -1,10 +1,52 @@
 import xml.etree.ElementTree as ET
 
+# Método que ordena un vector por medio del algoritmo de ordenación Mergesort
+# Devuelve el algoritmo ordenado además de la ultima iteración del algoritmo sin ordenar
+# Autor : Mario García Martínez
+def mergeSort(vector):
+
+    # Copia del vector que se usa para ordenar y no afectar al original
+    vectorResultado = list(vector)
+    ultimoVector = list(vector)
+
+    
+    if len(vectorResultado) > 1:
+        mid = len(vectorResultado)//2
+        L = vectorResultado[:mid]
+        R = vectorResultado[mid:]
+
+        mergeSort(L)
+        mergeSort(R)
+
+        i = j = k = 0
+
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                vectorResultado[k] = L[i]
+                i += 1
+            else:
+                vectorResultado[k] = R[j]
+                j += 1
+            k += 1
+
+        while i < len(L):
+            vectorResultado[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            vectorResultado[k] = R[j]
+            j += 1
+            k += 1
+        ultimoVector = L + R
+    return vectorResultado, ultimoVector
+
+
 # Pregunta de ejemplo sobre la primera llamada tras ejecutar mergesort (rellenar)
 # Autor : Mario García Martínez
 def crear_pregunta_mergesort(vector):
 
-
+    vectorOrdenado, vectorSolucion = mergeSort(vector)
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
 
@@ -40,7 +82,7 @@ def crear_pregunta_mergesort(vector):
         </table>
         ]]>
     """.format(''.join(['<td>{}</td>'.format(val) for val in vector]),
-               ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in sorted(vector)]))
+               ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in vectorSolucion]))
 
     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
     text_generalfeedback = ET.SubElement(generalfeedback, "text")
