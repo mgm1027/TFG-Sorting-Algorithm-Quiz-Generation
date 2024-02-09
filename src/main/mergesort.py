@@ -38,7 +38,10 @@ def mergeSort(vector):
             vectorResultado[k] = R[j]
             j += 1
             k += 1
+
         ultimoVector = L + R
+    
+    
     return vectorResultado, ultimoVector
 
 
@@ -46,7 +49,10 @@ def mergeSort(vector):
 # Autor : Mario García Martínez
 def crear_pregunta_mergesort(vector):
 
-    vectorOrdenado, vectorSolucion = mergeSort(vector)
+    vectorOrdenado,vectorSolucion = mergeSort(vector)
+    
+    for i in vectorOrdenado:
+            print(i)
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
 
