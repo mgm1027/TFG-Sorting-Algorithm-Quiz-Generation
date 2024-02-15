@@ -1,4 +1,8 @@
 import xml.etree.ElementTree as ET
+import random
+
+LONGITUD_VECTOR_MIN = 5
+LONGITUD_VECTOR_MAX = 20
 
 # Método que ordena un vector por medio del algoritmo de ordenación Mergesort
 # Devuelve el algoritmo ordenado además de la ultima iteración del algoritmo sin ordenar
@@ -6,8 +10,8 @@ import xml.etree.ElementTree as ET
 def mergeSort(vector):
 
     # Copia del vector que se usa para ordenar y no afectar al original
-    vectorResultado = list(vector)
-    ultimoVector = list(vector)
+    vectorResultado = vector
+    ultimoVector = vector
 
     
     if len(vectorResultado) > 1:
@@ -47,14 +51,10 @@ def mergeSort(vector):
 
 # Pregunta de ejemplo sobre la primera llamada tras ejecutar mergesort (rellenar)
 # Autor : Mario García Martínez
-def crear_pregunta_mergesort(vector):
+def crear_pregunta_mergesort(vector, quiz):
+    vectorInicial= list(vector)
 
-    vectorOrdenado,vectorSolucion = mergeSort(vector)
-    
-    for i in vectorOrdenado:
-            print(i)
-    # Creamos el elemento raíz del xml
-    quiz = ET.Element("quiz")
+    vectorOrdenado,vectorSolucion = mergeSort(vectorInicial)
 
     # Creamos el subelemento de pregunta
     question = ET.SubElement(quiz,"question")
@@ -86,7 +86,6 @@ def crear_pregunta_mergesort(vector):
         <tr>{}</tr>
         </tbody>
         </table>
-        ]]>
     """.format(''.join(['<td>{}</td>'.format(val) for val in vector]),
                ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in vectorSolucion]))
 
@@ -101,14 +100,45 @@ def crear_pregunta_mergesort(vector):
 
     idnumber = ET.SubElement(question, "idnumber")
 
-    return quiz
+    return question
 
 # Vector de ejemplo
-vector_ejemplo = [86, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 37]
+# vector_ejemplo = [86, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 37]
 
 # Crear pregunta
-pregunta_mergesort = crear_pregunta_mergesort(vector_ejemplo)
+#pregunta_mergesort = crear_pregunta_mergesort(vector_ejemplo)
 
 # Crear el árbol XML y escribirlo en un archivo
-tree = ET.ElementTree(pregunta_mergesort)
-tree.write("pregunta_mergesort.xml", encoding="utf-8", xml_declaration=True)
+#tree = ET.ElementTree(pregunta_mergesort)
+#tree.write("pregunta_mergesort.xml", encoding="utf-8", xml_declaration=True)
+
+
+# Generador de cuestionarios de preguntas aleatorias sobre Mergesort
+# Autor : Mario García Martínez
+def generar_preguntas_mergesort (numero_preguntas):
+
+    # Creamos el elemento raíz del xml
+    quiz = ET.Element("quiz")
+
+    #Generamos un numero de preguntas a partir de la variable pasada por parámetro
+    for i in range(numero_preguntas):
+        #Inicializamos el vector que vamos a usar como pregunta
+        vector_aleatorio = []
+        #Generamos aleatoriamente la longitud de la pregunta
+        longitud = random.randint( LONGITUD_VECTOR_MIN , LONGITUD_VECTOR_MAX )
+        #Rellenamos los valores del vector con valores aleatorios
+        for i in range(longitud):
+            vector_aleatorio.append(random.randint(0,100))
+        
+        #Creamos la pregunta una vez tenemos el vector
+        crear_pregunta_mergesort(vector_aleatorio, quiz)
+
+    # Creamos el árbol XML y lo escribimos en un archivo
+    tree = ET.ElementTree(quiz)
+    tree.write("pregunta_mergesort.xml", encoding="utf-8", xml_declaration=True)
+    
+
+generar_preguntas_mergesort(10)
+    
+    
+
