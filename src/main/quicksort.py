@@ -1,4 +1,8 @@
 import xml.etree.ElementTree as ET
+import random
+
+LONGITUD_VECTOR_MIN = 5
+LONGITUD_VECTOR_MAX = 20
 
 # Método que calcula la primera partición obtenida tras pivotar
 # unidireccionalmente con el primer elemento como pivote del algoritmo
@@ -7,7 +11,7 @@ import xml.etree.ElementTree as ET
 def quickSort_unidireccional(vector, inicio, fin):
 
     # Copia del vector para no modificar el original
-    vectorResultado = list(vector)
+    vectorResultado = vector
     pivote = vectorResultado[inicio]
     # Primer y segundo puntero señalan a la posición posterior al pivote al comenzar
     izq = inicio + 1
@@ -38,7 +42,7 @@ def quickSort_unidireccional(vector, inicio, fin):
 def quickSort_bidireccional(vector, inicio, fin):
 
     # Copia del vector para no modificar el original
-    vectorResultado = list(vector)
+    vectorResultado = vector
     pivote = vectorResultado[inicio]
     # Primer puntero señala al primer elemento posterior al pivote
     izq = inicio + 1
@@ -74,14 +78,11 @@ def quickSort_bidireccional(vector, inicio, fin):
 
 # Pregunta de ejemplo sobre la primera llamada tras ejecutar quicksort (rellenar)
 # Autor : Mario García Martínez
-def crear_pregunta_quicksort(vector):
+def crear_pregunta_quicksort(vector, quiz):
 
     # Obtenemos las soluciones de los 2 métodos para calcular la primera partición de Quicksort
-    solucionBidireccional, finBidireccional = quickSort_bidireccional(vector, 0, (len(vector)-1) )
-    solucionUnidireccional , finUnidireccional = quickSort_unidireccional(vector, 0, (len(vector)-1) )
-
-    # Creamos el elemento raíz del xml
-    quiz = ET.Element("quiz")
+    solucionBidireccional, finBidireccional = quickSort_bidireccional(list(vector), 0, (len(vector)-1) )
+    solucionUnidireccional , finUnidireccional = quickSort_unidireccional(list(vector), 0, (len(vector)-1) )
 
     # Creamos el subelemento de pregunta
     question = ET.SubElement(quiz,"question")
@@ -121,7 +122,6 @@ def crear_pregunta_quicksort(vector):
         <tr>{}</tr>
         </tbody>
         </table>
-        ]]>
     """.format(''.join(['<td>{}</td>'.format(val) for val in vector]), # Visualización de vector en el enunciado
                ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in solucionBidireccional ]), # Solución 1 (Bidireccional)
                ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in solucionUnidireccional ])) # Solución 2 (Unirrecional)
@@ -137,14 +137,40 @@ def crear_pregunta_quicksort(vector):
 
     idnumber = ET.SubElement(question, "idnumber")
 
-    return quiz
+    return question
 
 # Vector de ejemplo
-vector_ejemplo = [37, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 86]
+#vector_ejemplo = [37, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 86]
 
 # Crear pregunta
-pregunta_quicksort = crear_pregunta_quicksort(vector_ejemplo)
+#pregunta_quicksort = crear_pregunta_quicksort(vector_ejemplo)
 
 # Crear el árbol XML y escribirlo en un archivo
-tree = ET.ElementTree(pregunta_quicksort)
-tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
+#tree = ET.ElementTree(pregunta_quicksort)
+#tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
+
+# Generador de cuestionarios de preguntas aleatorias sobre Mergesort
+# Autor : Mario García Martínez
+def generar_preguntas_quicksort (numero_preguntas):
+
+    # Creamos el elemento raíz del xml
+    quiz = ET.Element("quiz")
+
+    #Generamos un numero de preguntas a partir de la variable pasada por parámetro
+    for i in range(numero_preguntas):
+        #Inicializamos el vector que vamos a usar como pregunta
+        vector_aleatorio = []
+        #Generamos aleatoriamente la longitud de la pregunta
+        longitud = random.randint( LONGITUD_VECTOR_MIN , LONGITUD_VECTOR_MAX )
+        #Rellenamos los valores del vector con valores aleatorios
+        for i in range(longitud):
+            vector_aleatorio.append(random.randint(0,100))
+        
+        #Creamos la pregunta una vez tenemos el vector
+        crear_pregunta_quicksort(vector_aleatorio, quiz)
+
+    # Creamos el árbol XML y lo escribimos en un archivo
+    tree = ET.ElementTree(quiz)
+    tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
+
+generar_preguntas_quicksort(10)
