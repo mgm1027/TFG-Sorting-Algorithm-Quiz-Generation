@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import random
 
 LONGITUD_VECTOR_MIN = 5
-LONGITUD_VECTOR_MAX = 20
+LONGITUD_VECTOR_MAX = 10
 
 # Método que ordena un vector por medio del algoritmo de ordenación Mergesort
 # Devuelve el algoritmo ordenado además de la ultima iteración del algoritmo sin ordenar
@@ -102,6 +102,73 @@ def crear_pregunta_mergesort(vector, quiz):
 
     return question
 
+# Pregunta de ejemplo sobre la primera llamada tras ejecutar mergesort (rellenar)
+# Autor : Mario García Martínez
+def crear_pregunta_mergesort_multiple(vector, quiz):
+    vectorInicial = list(vector)
+
+    vectorOrdenado, vectorSolucion = mergeSort(vectorInicial)
+    # Hacer copias de los vectores para las opciones
+    vectorOpcion1 = vectorInicial.copy()
+    vectorOpcion2 = vectorInicial.copy()
+
+    # Cambiamos un poco el orden de las opciones incorrectas
+    random.shuffle(vectorOpcion1)
+    random.shuffle(vectorOpcion2)
+
+    # Cambiamos el orden de las preguntas para que la respuesta correcta no sea siempre la misma opción
+    opciones = [vectorOpcion1, vectorOpcion2, vectorSolucion]
+    random.shuffle(opciones)
+
+    # Creamos el subelemento de pregunta
+    question = ET.SubElement(quiz, "question")
+    question.set("type", "multichoice")  # Cambiar a multichoice
+
+    # Creamos el subelemento del vector mergesort que se debe ordenar
+    name = ET.SubElement(question, "name")
+    text_name = ET.SubElement(name, "text")
+    text_name.text = "Mergesort " + str(vector)
+
+    # Creamos el subelemento de la pregunta del test para el formato html
+    questiontext = ET.SubElement(question, "questiontext", format="html")
+
+    # Creamos el subelemento del texto de la pregunta
+    text_question = ET.SubElement(questiontext, "text")
+
+    # Introducimos el enunciado de la pregunta
+    text_question.text = """
+        <![CDATA[
+        <p>Dado el siguiente vector:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{}</tr>
+        </tbody>
+        </table>
+        <p>¿Qué nuevo vector resultaría al aplicar el método <em>mergesort</em>, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? </p>
+    """.format(''.join(['<td>{}</td>'.format(val) for val in vector]))
+
+    # Agregamos opciones de respuesta
+    for opcion in opciones:
+        choice = ET.SubElement(question, "answer", fraction="100" if opcion == vectorSolucion else "0")
+        text_choice = ET.SubElement(choice, "text")
+        text_choice.text = f"<![CDATA[<p>{' '.join(map(str, opcion))}</p>"
+
+    generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
+    text_generalfeedback = ET.SubElement(generalfeedback, "text")
+    #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {', '.join(map(str, vectorSolucion))}</p>"
+
+
+    penalty = ET.SubElement(question, "penalty")
+    penalty.text = "0.3333333"
+
+    hidden = ET.SubElement(question, "hidden")
+    hidden.text = "0"
+
+    idnumber = ET.SubElement(question, "idnumber")
+
+    return question
+
 # Vector de ejemplo
 # vector_ejemplo = [86, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 37]
 
@@ -130,8 +197,9 @@ def generar_preguntas_mergesort (numero_preguntas):
         for i in range(longitud):
             vector_aleatorio.append(random.randint(0,100))
         
-        #Creamos la pregunta una vez tenemos el vector
-        crear_pregunta_mergesort(vector_aleatorio, quiz)
+        #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
+        pregunta_aleatoria = random.choice([crear_pregunta_mergesort, crear_pregunta_mergesort_multiple])   
+        pregunta_aleatoria(vector_aleatorio, quiz)
 
     # Creamos el árbol XML y lo escribimos en un archivo
     tree = ET.ElementTree(quiz)

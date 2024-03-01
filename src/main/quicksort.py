@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import random
 
 LONGITUD_VECTOR_MIN = 5
-LONGITUD_VECTOR_MAX = 20
+LONGITUD_VECTOR_MAX = 10
 
 # Método que calcula la primera partición obtenida tras pivotar
 # unidireccionalmente con el primer elemento como pivote del algoritmo
