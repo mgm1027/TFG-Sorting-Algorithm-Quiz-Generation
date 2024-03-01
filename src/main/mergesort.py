@@ -102,7 +102,7 @@ def crear_pregunta_mergesort(vector, quiz):
 
     return question
 
-# Pregunta de ejemplo sobre la primera llamada tras ejecutar mergesort (rellenar)
+# Pregunta selección múltiple sobre la primera llamada de mergesort
 # Autor : Mario García Martínez
 def crear_pregunta_mergesort_multiple(vector, quiz):
     vectorInicial = list(vector)
@@ -122,7 +122,7 @@ def crear_pregunta_mergesort_multiple(vector, quiz):
 
     # Creamos el subelemento de pregunta
     question = ET.SubElement(quiz, "question")
-    question.set("type", "multichoice")  # Cambiar a multichoice
+    question.set("type", "multichoice")  # Cambia a multichoice
 
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
