@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import random
 
+
 LONGITUD_VECTOR_MIN = 5
 LONGITUD_VECTOR_MAX = 10
 
@@ -170,7 +171,7 @@ def crear_pregunta_mergesort_multiple(vector, quiz):
     return question
 
 # Vector de ejemplo
-# vector_ejemplo = [86, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 37]
+#vector_ejemplo = [86, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 37]
 
 # Crear pregunta
 #pregunta_mergesort = crear_pregunta_mergesort(vector_ejemplo)
@@ -204,7 +205,6 @@ def generar_preguntas_mergesort (numero_preguntas):
     # Creamos el árbol XML y lo escribimos en un archivo
     tree = ET.ElementTree(quiz)
     tree.write("pregunta_mergesort.xml", encoding="utf-8", xml_declaration=True)
-    
 
 generar_preguntas_mergesort(10)
     

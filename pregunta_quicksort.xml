@@ -1,105 +1,144 @@
 <?xml version='1.0' encoding='utf-8'?>
-<quiz><question type="multichoice"><name><text>Mergesort [83, 28, 80, 47, 32]</text></name><questiontext format="html"><text>
+<quiz><question type="multichoice"><name><text>Mergesort [3, 86, 75, 54, 74]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;86&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;47 83 32 80 28&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;80 28 83 47 32&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;32 28 80 47 83&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 32, 28, 80, 47, 83&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [89, 67, 83, 25, 83, 36, 77, 89, 95, 0]</text></name><questiontext format="html"><text>
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;74 54 3 75 86&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;75 54 74 86 3&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;3 86 75 54 74&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 3, 86, 75, 54, 74&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Quicksort [2, 73, 35, 73, 11, 56]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;67&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;77&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método bidirecional, en el que un índice comienza por el extremo izquierdo y el otro índice por el extremo derecho?&lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;83 95 67 83 89 0 25 89 77 36&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;77 36 25 89 0 67 83 89 95 83&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;0 67 83 25 83 36 77 89 89 95&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 0, 67, 83, 25, 83, 36, 77, 89, 89, 95&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [74, 48, 83, 54, 55, 83]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método bidirecional, en el que un índice comienza por el extremo izquierdo y el otro índice por el extremo derecho?&lt;/p&gt;
-    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;54 48 55 74 83 83&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;48 54 74 83 55 83&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;74 83 55 54 83 48&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 54, 48, 55, 74, 83, 83&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Quicksort [23, 48, 51, 82, 20, 24, 61, 26, 17]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;51&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;61&lt;/td&gt;&lt;td&gt;26&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;56&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;Rellene los valores de los vectores resultantes al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt;, utilizando el primer elemento como pivote.&lt;/p&gt;
         &lt;p&gt;Para el primer método de partición, bidireccional, en el que dos índices empiezan en los dos extremos y avanzan en sentidos opuestos:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%20:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%23:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%82:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%51:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%61:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%26:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%48:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%73:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%35:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%73:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%11:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%56:0.1#}&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;/table&gt;
         &lt;p&gt;Para el segundo método de partición, unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%20:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%23:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%82:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%48:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%61:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%26:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%51:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%73:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%35:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%73:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%11:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%56:0.1#}&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
-    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [71, 57, 52, 2, 29, 39, 77]</text></name><questiontext format="html"><text>
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [36, 42, 94, 95, 53, 0, 38, 81]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;71&lt;/td&gt;&lt;td&gt;57&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;29&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;77&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;81&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;81 94 36 0 53 38 95 42&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;0 36 94 95 53 42 38 81&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;94 38 0 42 36 95 53 81&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 0, 36, 94, 95, 53, 42, 38, 81&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [53, 79, 60, 99, 21, 42, 29, 50, 59, 93]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;79&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;td&gt;99&lt;/td&gt;&lt;td&gt;21&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;29&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;59&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método bidirecional, en el que un índice comienza por el extremo izquierdo y el otro índice por el extremo derecho?&lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;77 52 71 2 57 29 39&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;2 52 39 29 57 77 71&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;39 57 52 2 29 71 77&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 39, 57, 52, 2, 29, 71, 77&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [18, 96, 65, 12, 12, 73]</text></name><questiontext format="html"><text>
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;21 50 29 42 53 99 60 79 59 93&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;79 50 42 21 59 53 93 60 29 99&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;53 50 59 93 60 21 29 79 42 99&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 21, 50, 29, 42, 53, 99, 60, 79, 59, 93&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Quicksort [24, 91, 92, 97, 44, 41, 64, 90]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;96&lt;/td&gt;&lt;td&gt;65&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;92&lt;/td&gt;&lt;td&gt;97&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;64&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
-        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
-    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;12 12 18 96 65 73&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;18 96 65 73 12 12&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;12 65 12 96 18 73&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 12, 12, 18, 96, 65, 73&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [86, 65, 49, 32, 42, 66, 72, 42]</text></name><questiontext format="html"><text>
+        &lt;p&gt;Rellene los valores de los vectores resultantes al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt;, utilizando el primer elemento como pivote.&lt;/p&gt;
+        &lt;p&gt;Para el primer método de partición, bidireccional, en el que dos índices empiezan en los dos extremos y avanzan en sentidos opuestos:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%91:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%92:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%97:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%44:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%41:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%64:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%90:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Para el segundo método de partición, unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%91:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%92:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%97:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%44:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%41:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%64:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%90:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [49, 11, 16, 80, 46, 17, 76, 79, 67]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;86&lt;/td&gt;&lt;td&gt;65&lt;/td&gt;&lt;td&gt;49&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;49&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;76&lt;/td&gt;&lt;td&gt;79&lt;/td&gt;&lt;td&gt;67&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;86 42 32 42 66 72 49 65&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;42 86 66 72 49 42 32 65&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;42 65 49 32 42 66 72 86&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 42, 65, 49, 32, 42, 66, 72, 86&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [0, 11, 39, 53, 84, 99]</text></name><questiontext format="html"><text>
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;46 67 76 16 49 79 80 11 17&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;17 11 16 46 49 80 76 79 67&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;46 80 16 17 67 79 49 11 76&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 17, 11, 16, 46, 49, 80, 76, 79, 67&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Quicksort [67, 15, 86, 25, 75, 51, 95, 2, 30, 3]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;99&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;67&lt;/td&gt;&lt;td&gt;15&lt;/td&gt;&lt;td&gt;86&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;td&gt;51&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
-        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;39 84 99 53 0 11&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;39 53 99 0 11 84&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;0 11 39 53 84 99&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 0, 11, 39, 53, 84, 99&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [48, 80, 10, 93, 68, 96, 1, 43, 82, 70]</text></name><questiontext format="html"><text>
+        &lt;p&gt;Rellene los valores de los vectores resultantes al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt;, utilizando el primer elemento como pivote.&lt;/p&gt;
+        &lt;p&gt;Para el primer método de partición, bidireccional, en el que dos índices empiezan en los dos extremos y avanzan en sentidos opuestos:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%15:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%3:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%25:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%30:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%51:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%67:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%95:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%75:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%86:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Para el segundo método de partición, unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%3:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%15:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%25:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%51:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%30:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%67:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%75:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%86:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%95:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [77, 55, 55, 85, 9]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;td&gt;68&lt;/td&gt;&lt;td&gt;96&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;70&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;77&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
-        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
-    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;43 10 1 48 68 96 80 93 82 70&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;96 80 93 43 82 70 68 1 10 48&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;10 82 43 70 93 1 48 68 96 80&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 43, 10, 1, 48, 68, 96, 80, 93, 82, 70&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [46, 63, 52, 12, 78, 80]</text></name><questiontext format="html"><text>
+        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método bidirecional, en el que un índice comienza por el extremo izquierdo y el otro índice por el extremo derecho?&lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;9 55 55 77 85&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;77 55 55 85 9&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;55 85 9 55 77&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 9, 55, 55, 77, 85&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [53, 68, 40, 9, 41, 20]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;63&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;78&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;68&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
-        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha?&lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;52 46 63 12 80 78&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;12 46 52 63 78 80&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;46 63 78 12 80 52&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 12, 46, 52, 63, 78, 80&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question></quiz>
+        &lt;p&gt;Al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt; utilizando el primer elemento como pivote, ¿Cuál sería el vector resultante aplicando el método bidirecional, en el que un índice comienza por el extremo izquierdo y el otro índice por el extremo derecho?&lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;41 20 40 9 53 68&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;9 53 41 20 40 68&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;53 9 20 41 68 40&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 41, 20, 40, 9, 53, 68&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Quicksort [2, 38, 72, 71, 83, 40]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;td&gt;71&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores de los vectores resultantes al aplicar el proceso de partición del &lt;em&gt;quicksort&lt;/em&gt;, utilizando el primer elemento como pivote.&lt;/p&gt;
+        &lt;p&gt;Para el primer método de partición, bidireccional, en el que dos índices empiezan en los dos extremos y avanzan en sentidos opuestos:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%38:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%72:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%71:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%83:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%40:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Para el segundo método de partición, unirrecional, en el que dos índices empiezan en el extremo izquierdo y avanzan hacia la derecha:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%38:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%72:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%71:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%83:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%40:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question></quiz>
