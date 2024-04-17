@@ -1,112 +1,268 @@
 <?xml version='1.0' encoding='utf-8'?>
-<quiz><question type="multichoice"><name><text>Mergesort [71, 7, 22, 65, 90]</text></name><questiontext format="html"><text>
+<quiz><question type="multichoice"><name><text>Mergesort [94, 44, 35, 48, 12]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;71&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;65&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;94&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;65 22 71 7 90&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;7 71 22 65 90&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;22 7 71 90 65&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 7, 71, 22, 65, 90&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [90, 18, 41, 39, 60, 18, 49, 86, 41, 7]</text></name><questiontext format="html"><text>
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;44 94 12 35 48&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;35 48 94 12 44&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;48 94 35 12 44&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 44, 94, 12, 35, 48&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [100, 11, 84, 32, 62, 54, 75]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;49&lt;/td&gt;&lt;td&gt;86&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;62&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;41 60 18 41 49 18 90 7 86 39&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;39 7 41 18 18 86 41 90 60 49&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;18 39 41 60 90 7 18 41 49 86&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 18, 39, 41, 60, 90, 7, 18, 41, 49, 86&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [80, 70, 43, 56, 39, 10]</text></name><questiontext format="html"><text>
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;62 32 75 54 11 84 100&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;11 84 100 32 54 62 75&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;100 62 11 54 32 84 75&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 11, 84, 100, 32, 54, 62, 75&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [93, 74, 41, 2, 85, 4, 94, 17, 60, 31]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;80&lt;/td&gt;&lt;td&gt;70&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;56&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;43 39 10 70 80 56&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;43 70 80 10 39 56&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;39 80 70 56 43 10&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 43, 70, 80, 10, 39, 56&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [31, 1, 73, 60, 52, 94]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;31&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
-    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;31 73 94 1 60 52&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;1 31 73 52 60 94&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;60 73 31 94 1 52&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 1, 31, 73, 52, 60, 94&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [37, 32, 41, 74, 9]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
-    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;32 37 9 41 74&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;9 32 37 41 74&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;41 9 74 32 37&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 32, 37, 9, 41, 74&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [62, 46, 98, 74, 16, 76, 17, 83, 15]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;62&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;98&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;76&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;15&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;93&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;td&gt;31&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%46:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%62:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%74:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%98:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%15:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%16:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%76:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%83:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%41:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%74:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%85:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%93:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%4:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%31:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%60:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%94:0.1#}&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
-    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [86, 39, 85, 37, 69, 24, 97, 15]</text></name><questiontext format="html"><text>
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [69, 41, 96, 82, 28]</text></name><questiontext format="html"><text>
         &lt;![CDATA[
         &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
         &lt;table border="1" align="center"&gt;
         &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;86&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;97&lt;/td&gt;&lt;td&gt;15&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%37:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%39:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%85:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%86:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%15:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%69:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%97:0.1#}&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [8, 23, 57, 59, 30, 33, 78, 95, 72, 3]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;57&lt;/td&gt;&lt;td&gt;59&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;33&lt;/td&gt;&lt;td&gt;78&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%8:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%23:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%30:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%57:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%59:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%3:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%33:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%72:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%78:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%95:0.1#}&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [100, 100, 89, 37, 73, 26, 39, 29, 62]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;td&gt;26&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;29&lt;/td&gt;&lt;td&gt;62&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%37:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%89:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%100:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%100:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%26:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%29:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%39:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%62:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%73:0.1#}&lt;/td&gt;&lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;/table&gt;
-    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [51, 64, 13, 78, 27]</text></name><questiontext format="html"><text>
-        &lt;![CDATA[
-        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
-        &lt;table border="1" align="center"&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;&lt;td&gt;51&lt;/td&gt;&lt;td&gt;64&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;78&lt;/td&gt;&lt;td&gt;27&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;96&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;/table&gt;
         &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
-    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;51 64 13 27 78&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;51 13 27 64 78&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;27 13 64 51 78&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 51, 64, 13, 27, 78&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question></quiz>
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;69 82 28 41 96&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;41 69 28 82 96&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;69 28 96 41 82&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 41, 69, 28, 82, 96&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [11, 7, 3, 15, 36, 25, 36]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;15&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%3:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%7:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%11:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%15:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%25:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%36:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%36:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [55, 1, 3, 16, 93, 61]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;td&gt;61&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;1 3 55 16 61 93&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;55 16 3 1 93 61&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;93 61 16 55 3 1&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 1, 3, 55, 16, 61, 93&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [74, 79, 9, 42, 11, 94]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;79&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%9:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%74:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%79:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%11:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%42:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%94:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [68, 17, 16, 51, 70, 4]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;68&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;51&lt;/td&gt;&lt;td&gt;70&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%16:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%68:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%4:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%51:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%70:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [84, 40, 24, 46, 97, 5, 51]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;97&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;51&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%40:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%84:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%5:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%46:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%51:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%97:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [69, 82, 90, 80, 49, 91, 66, 10]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;td&gt;49&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%69:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%80:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%82:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%90:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%10:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%49:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%66:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%91:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [27, 22, 9, 50, 81, 32]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;81&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;9 22 27 32 50 81&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;81 22 9 27 50 32&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;81 27 9 22 32 50&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 9, 22, 27, 32, 50, 81&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [17, 1, 89, 71, 63]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;71&lt;/td&gt;&lt;td&gt;63&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;1 17 63 71 89&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;71 89 17 1 63&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;1 89 17 71 63&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 1, 17, 63, 71, 89&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [90, 64, 95, 38, 86]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;64&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;86&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;64 90 38 86 95&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;64 38 95 86 90&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;86 38 64 95 90&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 64, 90, 38, 86, 95&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [25, 52, 77, 18, 48, 6, 55, 39, 53, 46]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;77&lt;/td&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;46 77 52 6 55 48 18 53 25 39&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;18 25 48 52 77 6 39 46 53 55&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;39 52 77 25 55 18 46 48 6 53&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 18, 25, 48, 52, 77, 6, 39, 46, 53, 55&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [71, 39, 94, 89, 38, 61]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;71&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;61&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;61 89 38 39 71 94&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;61 71 89 38 94 39&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;39 71 94 38 61 89&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 39, 71, 94, 38, 61, 89&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [79, 43, 75, 97, 20, 17, 86]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;79&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;td&gt;97&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;86&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%43:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%75:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%79:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%17:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%20:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%86:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%97:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [74, 67, 60, 52, 100, 52]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;67&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;100 52 74 60 52 67&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;60 67 74 52 52 100&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;67 52 100 74 60 52&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 60, 67, 74, 52, 52, 100&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [55, 28, 37, 33, 93, 50, 16, 88, 55, 73]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;33&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%28:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%33:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%37:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%55:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%93:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%16:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%50:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%55:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%73:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%88:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [14, 73, 92, 99, 80, 38]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;73&lt;/td&gt;&lt;td&gt;92&lt;/td&gt;&lt;td&gt;99&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;80 14 73 99 38 92&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;14 73 92 38 80 99&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;73 92 99 80 14 38&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 14, 73, 92, 38, 80, 99&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [21, 53, 37, 39, 28, 33, 93, 9, 81]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;21&lt;/td&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;td&gt;33&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;81&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;33 39 28 37 81 93 9 53 21&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;21 37 39 53 9 28 33 81 93&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;21 37 93 81 33 28 53 39 9&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 21, 37, 39, 53, 9, 28, 33, 81, 93&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [97, 99, 2, 59, 88, 68, 27, 10, 85, 72]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;97&lt;/td&gt;&lt;td&gt;99&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;59&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;td&gt;68&lt;/td&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%59:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%88:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%97:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%99:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%10:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%27:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%68:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%72:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%85:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [79, 0, 31, 82, 35, 38, 91, 52]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;79&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;31&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;35 38 82 52 79 0 91 31&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;35 82 38 0 31 52 79 91&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;0 31 79 82 35 38 52 91&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 0, 31, 79, 82, 35, 38, 52, 91&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Mergesort [4, 75, 54, 92, 11, 98]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;td&gt;92&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;98&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%4:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%54:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%75:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%11:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%92:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%98:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>Mergesort [56, 41, 26, 10, 82, 66, 50, 34]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;56&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;26&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;mergesort&lt;/em&gt;, en la primera llamada, una vez resueltas las llamadas recursivas, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;34 41 66 82 26 10 56 50&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;66 50 82 10 34 56 41 26&lt;/p&gt;</text></answer><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;10 26 41 56 34 50 66 82&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 10, 26, 41, 56, 34, 50, 66, 82&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question></quiz>

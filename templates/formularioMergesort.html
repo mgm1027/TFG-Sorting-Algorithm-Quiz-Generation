@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Ordenación Mergesort</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Algoritmo de Ordenación <strong>Mergesort</strong></h1>
+    </header>
+    <nav>
+        <h2>Selecciona un algoritmo:</h2>
+        <ul>
+            <li><a href="/mergesort">Mergesort</a></li>
+            <li><a href="/quicksort">Quicksort</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>
+            El algoritmo de ordenación por mezcla (o <strong>Mergesort</strong>) es un algoritmo de ordenamiento externo desarrollado por Jhon Von Neumann basado en la técnica divide y vencerás.
+            El método Mergesort consiste en dividir la lista desordenada de valores en dos sublistas prácticamente del mismo tamaño e ir ordenando de forma <strong>recursiva</strong> las dos
+            sublistas para luego mezclar las dos sublistas en una sola lista ordenada.
+            
+        </p>
+        <p><a href="https://es.wikipedia.org/wiki/Ordenamiento_por_mezcla">
+            <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
+        </a></p>
+        <form method = 'POST' action="{{ url_for('formularioMergesort') }}">            
+                <div>               
+                    <label for="numero_preguntas">            
+                        <br /><h3 data-i18n="preguntas"></h3><br />
+                    </label>
+
+                        <p><input type="number" min="1" title="Número de preguntas" name="numero_preguntas" required></p> 
+                        <p></p>
+                </div>        
+                <div> 
+                    <div></div>
+                        <button type="button"> 
+                            <a href="/mergesort"><h4 data-i18n="cancelar"></h4> </a></button>
+                        <button type="submit">
+                            <h4 data-i18n="generar_fichero"></h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a href="inicio.html">
+            <img class="img1" src="../static/img/logo.png" alt="Logo">
+        </a>
+    </div>
+    
+</body>
+</html>
