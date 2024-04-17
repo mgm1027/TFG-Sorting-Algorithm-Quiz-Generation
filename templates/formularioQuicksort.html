@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Ordenación Quicksort</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Algoritmo de Ordenación <strong>Quicksort</strong></h1>
+    </header>
+    <nav>
+        <h2>Selecciona un algoritmo:</h2>
+        <ul>
+            <li><a href="/mergesort">Mergesort</a></li>
+            <li><a href="/quicksort">Quicksort</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>
+            El algoritmo de ordenamiento rápido (o <strong>Quicksort</strong>) es un algoritmo de ordenación creado por el científico británico Charles Antony Richard Hoare.
+            El método Quicksort consiste en seleccionar un elemento de la lista como pivote, dejando a un lado todos los valores menores que él y al otro lado los mayores,
+            dejando dos sublistas de valores. Después únicamente se trata de repetir el proceso en ambas sublistas de forma <strong>recursiva</strong> hasta que la lista quede ordenada.
+            
+        </p>
+        <p><a href="https://es.wikipedia.org/wiki/Quicksort">
+            <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
+        </a></p>
+        <form method = 'POST' action="{{ url_for('formularioQuicksort') }}">            
+                <div>               
+                    <label for="numero_preguntas">            
+                        <br /><h3 data-i18n="preguntas"></h3><br />
+                    </label>
+
+                        <p><input type="number" min="1" title="Número de preguntas" name="numero_preguntas" required></p> 
+                        <p></p>
+                </div>        
+                <div> 
+                    <div></div>
+                        <button type="button"> 
+                            <a href="/quicksort"><h4 data-i18n="cancelar"></h4> </a></button>
+                        <button type="submit">
+                            <h4 data-i18n="generar_fichero"></h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a href="inicio.html">
+            <img class="img1" src="../static/img/logo.png" alt="Logo">
+        </a>
+    </div>
+    
+</body>
+</html>

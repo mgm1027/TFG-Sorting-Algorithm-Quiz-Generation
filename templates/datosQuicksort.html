@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Ordenación Quicksort</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Algoritmo de Ordenación <strong>Quicksort</strong></h1>
+    </header>
+    <nav>
+        <h2>Selecciona un algoritmo:</h2>
+        <ul>
+            <li><a href="/mergesort">Mergesort</a></li>
+            <li><a href="/quicksort">Quicksort</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>
+            El algoritmo de ordenamiento rápido (o <strong>Quicksort</strong>) es un algoritmo de ordenación creado por el científico británico Charles Antony Richard Hoare.
+            El método Quicksort consiste en seleccionar un elemento de la lista como pivote, dejando a un lado todos los valores menores que él y al otro lado los mayores,
+            dejando dos sublistas de valores. Después únicamente se trata de repetir el proceso en ambas sublistas de forma <strong>recursiva</strong> hasta que la lista quede ordenada.
+            
+        </p>
+        <p><a href="https://es.wikipedia.org/wiki/Quicksort">
+            <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
+        </a></p>
+        <div>
+                    <div>
+                        <button type="submit"><a href="{{ url_for('download_file', filename='pregunta_quicksort.xml') }}" data-i18n="Descargar banco de preguntas">Descargar banco de preguntas</a></button>
+        </div>
+                    <div>
+                        <button type="submit"><a href="{{ url_for('formularioQuicksort') }}" data-i18n="Generar nuevo banco de preguntas">Generar nuevo banco de preguntas</a></button>
+        </div>
+        </div>
+        <a href="inicio.html">
+            <img class="img1" src="../static/img/logo.png" alt="Logo">
+        </a>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Ordenación Mergesort</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Algoritmo de Ordenación <strong>Mergesort</strong></h1>
+    </header>
+    <nav>
+        <h2>Selecciona un algoritmo:</h2>
+        <ul>
+            <li><a href="/mergesort">Mergesort</a></li>
+            <li><a href="/quicksort">Quicksort</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>
+            El algoritmo de ordenación por mezcla (o <strong>Mergesort</strong>) es un algoritmo de ordenamiento externo desarrollado por Jhon Von Neumann basado en la técnica divide y vencerás.
+            El método Mergesort consiste en dividir la lista desordenada de valores en dos sublistas prácticamente del mismo tamaño e ir ordenando de forma <strong>recursiva</strong> las dos
+            sublistas para luego mezclar las dos sublistas en una sola lista ordenada.
+            
+        </p>
+        <p><a href="https://es.wikipedia.org/wiki/Ordenamiento_por_mezcla">
+            <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
+        </a></p>
+        <div>
+                    <div>
+                        <button type="submit"><a href="{{ url_for('download_file', filename='pregunta_mergesort.xml') }}" data-i18n="Descargar banco de preguntas">Descargar banco de preguntas</a></button>
+        </div>
+                    <div>
+                        <button type="submit"><a href="{{ url_for('formularioMergesort>') }}" data-i18n="Generar nuevo banco de preguntas">Generar nuevo banco de preguntas</a></button>
+        </div>
+        </div>
+        <a href="inicio.html">
+            <img class="img1" src="../static/img/logo.png" alt="Logo">
+        </a>
+    </div>
+    
+</body>
+</html>
