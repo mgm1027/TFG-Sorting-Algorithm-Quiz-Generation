@@ -36,6 +36,7 @@ def formularioQuicksort():
 @app.route('/datosQuicksort')
 def datosQuicksort():
     return render_template('datosQuicksort.html')
+
 @app.route('/datosMergesort')
 def datosMergesort():
     return render_template('datosMergesort.html')

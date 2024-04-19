@@ -9,6 +9,9 @@
 <body>
     <header>
         <h1>Algoritmo de Ordenación <strong>Mergesort</strong></h1>
+        <a href="https://github.com/mgm1027/TFG-Sorting-Algorithm-Quiz-Generation">
+            <img class="github" src="../static/img/github.png" alt="Repositorio">
+        </a>
     </header>
     <nav>
         <h2>Selecciona un algoritmo:</h2>
@@ -28,17 +31,22 @@
             <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
         </a></p>
         <div>
-                    <div>
-                        <button type="submit"><a href="{{ url_for('download_file', filename='pregunta_mergesort.xml') }}" data-i18n="Descargar banco de preguntas">Descargar banco de preguntas</a></button>
-        </div>
-                    <div>
-                        <button type="submit"><a href="{{ url_for('formularioMergesort>') }}" data-i18n="Generar nuevo banco de preguntas">Generar nuevo banco de preguntas</a></button>
-        </div>
-        </div>
-        <a href="inicio.html">
-            <img class="img1" src="../static/img/logo.png" alt="Logo">
-        </a>
+            <div>
+                <a href="{{ url_for('download_file', filename='pregunta_mergesort.xml') }}" data-i18n="Descargar banco de preguntas"><button class="button" type="submit">Descargar banco de preguntas</button></a>
+</div>
+            <div>
+                <a href="{{ url_for('formularioMergesort') }}" data-i18n="Generar nuevo banco de preguntas"><button class="button" type="submit">Generar nuevo banco de preguntas</button></a>
+</div>
+</div>
+
     </div>
-    
+    <a href="inicio.html">
+        <img class="img1" src="../static/img/logo.png" alt="Logo">
+    </a>
+    <footer>
+        <a href="https://www.ubu.es">
+            <img src="../static/img/ubu.png" alt="Universidad de Burgos">
+        </a>
+    </footer>
 </body>
 </html>
