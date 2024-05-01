@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, url_for,send_file, redirect
 import src.main.mergesort
 import src.main.quicksort
+import src.main.heapsort
 
 #va a buscar en el modulo principal de nuestra app (plantillas en templates)
 app = Flask(__name__)
@@ -16,6 +17,10 @@ def mergesort():
 @app.route('/quicksort')
 def quicksort():
     return render_template('quicksort.html')
+
+@app.route('/heapsort')
+def heapsort():
+    return render_template('heapsort.html')
 
 @app.route('/formularioMergesort', methods=['GET','POST'])
 def formularioMergesort():
@@ -33,6 +38,14 @@ def formularioQuicksort():
     src.main.quicksort.generar_preguntas_quicksort(numero_preguntas)
     return redirect(url_for('datosQuicksort'))
 
+@app.route('/formularioHeapsort', methods=['GET','POST'])
+def formularioHeapsort():
+    if request.method == 'GET':
+        return render_template('formularioHeapsort.html')
+    numero_preguntas= int(request.form.get('numero_preguntas'))
+    src.main.heapsort.generar_preguntas_heapsort(numero_preguntas)
+    return redirect(url_for('datosHeapsort'))
+
 @app.route('/datosQuicksort')
 def datosQuicksort():
     return render_template('datosQuicksort.html')
@@ -40,6 +53,10 @@ def datosQuicksort():
 @app.route('/datosMergesort')
 def datosMergesort():
     return render_template('datosMergesort.html')
+
+@app.route('/datosHeapsort')
+def datosHeapsort():
+    return render_template('datosHeapsort.html')
    
 @app.errorhandler(404)
 def pagina_no_encontrada(error):
@@ -52,6 +69,8 @@ def download_file(filename):
         file_path = 'pregunta_mergesort.xml'
     elif filename == 'pregunta_quicksort.xml':
         file_path = 'pregunta_quicksort.xml'
+    elif filename == 'pregunta_heapsort.xml':
+        file_path = 'pregunta_heapsort.xml'
 
     return send_file(file_path, as_attachment=True)
 

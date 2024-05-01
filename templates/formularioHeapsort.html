@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmo de Ordenación Mergesort</title>
+    <title>Algoritmo de Ordenación Heapsort</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
 </head>
 <body>
     <header>
-        <h1>Algoritmo de Ordenación <strong>Mergesort</strong></h1>
+        <h1>Algoritmo de Ordenación <strong>Heapsort</strong></h1>
         <a href="https://github.com/mgm1027/TFG-Sorting-Algorithm-Quiz-Generation">
             <img class="github" src="../static/img/github.png" alt="Repositorio">
         </a>
@@ -31,19 +31,31 @@
         <p><a href="https://es.wikipedia.org/wiki/Ordenamiento_por_mezcla">
             <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
         </a></p>
-        <div>
-            <div>
-                <a href="{{ url_for('download_file', filename='pregunta_mergesort.xml') }}" data-i18n="Descargar banco de preguntas"><button class="button" type="submit">Descargar banco de preguntas</button></a>
-</div>
-            <div>
-                <a href="{{ url_for('formularioMergesort') }}" data-i18n="Generar nuevo banco de preguntas"><button class="button" type="submit">Generar nuevo banco de preguntas</button></a>
-</div>
-</div>
+        <form method = 'POST' action="{{ url_for('formularioHeapsort') }}">            
+            <div>               
+                <label for="numero_preguntas">            
+                    <br /><h3 data-i18n="preguntas"></h3><br />
+                </label>
 
+                    <p><input type="number" min="1" title="Número de preguntas" name="numero_preguntas" required></p> 
+                    <p></p>
+            </div>        
+            <div> 
+                <div></div>
+                <button class="button" type="submit">
+                    <h4 data-i18n="generar_fichero">Generar Fichero</h4>
+                </button>
+                    <a href="/heapsort"><button class="button" type="button" > 
+                        <h4 data-i18n="cancelar">Cancelar</h4></button></a>
+
+                </div>
+            </div>
+        </div>
+    </form>
+        <a href="inicio.html">
+            <img class="img1" src="../static/img/logo.png" alt="Logo">
+        </a>
     </div>
-    <a href="inicio.html">
-        <img class="img1" src="../static/img/logo.png" alt="Logo">
-    </a>
     <footer>
         <a href="https://www.ubu.es">
             <img src="../static/img/ubu.png" alt="Universidad de Burgos">

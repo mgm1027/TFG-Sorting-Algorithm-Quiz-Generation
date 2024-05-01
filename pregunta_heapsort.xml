@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz><question type="cloze"><name><text>Heapsort [1, 55, 91, 96, 60]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;96&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%96:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%60:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%91:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%55:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%1:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>heapsort [43, 40, 20, 33, 93, 23, 83, 88, 63, 40]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;33&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;83&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;td&gt;63&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;93 88 83 63 40 23 20 33 43 40&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;83 23 40 93 40 88 43 33 20 63&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;88 43 20 40 83 63 23 93 33 40&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 93, 88, 83, 63, 40, 23, 20, 33, 43, 40&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>heapsort [76, 46, 16, 17, 10]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;76&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;76 46 16 17 10&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;76 17 46 16 10&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;76 17 10 46 16&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 76, 46, 16, 17, 10&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Heapsort [20, 50, 61, 89, 26]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;61&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;26&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%89:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%50:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%61:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%20:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%26:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>heapsort [97, 31, 37, 81, 69, 91]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;97&lt;/td&gt;&lt;td&gt;31&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;81&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;97 81 91 31 69 37&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;37 31 81 97 91 69&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;31 37 97 81 69 91&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 97, 81, 91, 31, 69, 37&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Heapsort [19, 18, 27, 2, 60, 72, 94, 27]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;19&lt;/td&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;td&gt;27&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%94:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%60:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%72:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%27:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%18:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%19:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%27:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%2:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>heapsort [53, 8, 63, 19, 45, 69, 89]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;53&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;63&lt;/td&gt;&lt;td&gt;19&lt;/td&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;89 45 69 19 8 53 63&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;63 89 8 53 19 45 69&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;19 53 45 89 69 8 63&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 89, 45, 69, 19, 8, 53, 63&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Heapsort [6, 47, 13, 24, 91, 98, 61, 31, 11, 24]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;98&lt;/td&gt;&lt;td&gt;61&lt;/td&gt;&lt;td&gt;31&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;24&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%98:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%91:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%61:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%31:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%47:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%13:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%6:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%11:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%24:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="cloze"><name><text>Heapsort [8, 8, 90, 69, 8, 87, 8, 75, 13]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;87&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;Rellene los valores del vector resultante al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;{1:NUMERICAL:%100%90:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%75:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%87:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%69:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%8:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%8:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%8:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%8:0.1#}&lt;/td&gt;&lt;td&gt;{1:NUMERICAL:%100%13:0.1#}&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+    </text></questiontext><generalfeedback format="html"><text /></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question><question type="multichoice"><name><text>heapsort [6, 47, 20, 59, 95, 74, 87]</text></name><questiontext format="html"><text>
+        &lt;![CDATA[
+        &lt;p&gt;Dado el siguiente vector:&lt;/p&gt;
+        &lt;table border="1" align="center"&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;59&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;87&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;p&gt;¿Qué nuevo vector resultaría al aplicar el método &lt;em&gt;heapsort&lt;/em&gt;, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? &lt;/p&gt;
+    </text></questiontext><answer fraction="100"><text>&lt;![CDATA[&lt;p&gt;95 59 87 6 47 74 20&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;87 47 95 20 59 6 74&lt;/p&gt;</text></answer><answer fraction="0"><text>&lt;![CDATA[&lt;p&gt;59 47 95 6 20 74 87&lt;/p&gt;</text></answer><generalfeedback format="html"><text>&lt;![CDATA[&lt;p&gt;La respuesta correcta es: 95, 59, 87, 6, 47, 74, 20&lt;/p&gt;</text></generalfeedback><penalty>0.3333333</penalty><hidden>0</hidden><idnumber /></question></quiz>

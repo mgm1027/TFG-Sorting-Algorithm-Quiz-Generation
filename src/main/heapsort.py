@@ -1,0 +1,195 @@
+import xml.etree.ElementTree as ET
+import random
+
+
+LONGITUD_VECTOR_MIN = 5
+LONGITUD_VECTOR_MAX = 10
+
+# Método que ordena un montículo de el algoritmo de ordenación Heapsort
+# Autor : Mario García Martínez
+def heapify(vector, n, i):
+  mayor = i
+  izq = 2 * i + 1
+  der = 2 * i + 2
+
+  if izq < n and vector[i] < vector[izq]:
+      mayor = izq
+
+  if der < n and vector[mayor] < vector[der]:
+      mayor = der
+
+  if mayor != i:
+      vector[i], vector[mayor] = vector[mayor], vector[i]
+      heapify(vector, n, mayor)
+
+# Método que ordena una lista por medio del algoritmo de ordenación por montículos o Heapsort
+# Devuelve la ista ordenada además de la ultima iteración de la lista sin ordenar
+# Autor : Mario García Martínez
+def heapSort(vector):
+    vectorResultado = vector
+    ultimoVector = vector
+    n = len(vectorResultado)
+
+    for i in range(n//2, -1, -1):
+        heapify(vectorResultado, n, i)
+        
+    ultimoVector= list(vectorResultado)
+    for i in range(n-1, 0, -1):
+        vectorResultado[i], vectorResultado[0] = vectorResultado[0], vectorResultado[i]
+
+        heapify(vector, i, 0)
+    
+    return vectorResultado, ultimoVector
+
+
+# Pregunta de ejemplo sobre la primera llamada tras ejecutar heapsort(ordenación por montículos)
+# Autor : Mario García Martínez
+def crear_pregunta_heapsort(vector, quiz):
+    vectorInicial= list(vector)
+
+    vectorOrdenado,vectorSolucion = heapSort(vectorInicial)
+
+
+    # Creamos el subelemento de pregunta
+    question = ET.SubElement(quiz,"question")
+    question.set("type", "cloze")
+
+    # Creamos el subelemento del vector heapsort que se debe ordenar
+    name = ET.SubElement(question, "name")
+    text_name = ET.SubElement(name, "text")
+    text_name.text = "Heapsort " + str(vector)
+
+    # Creamos el subelemento de la pregunta del test para el formato html
+    questiontext = ET.SubElement(question, "questiontext", format="html")
+
+    # Creamos el subelemento del texto de la pregunta
+    text_question = ET.SubElement(questiontext, "text")
+
+    # Introducimos el enunciado de la pregunta
+    text_question.text = """
+        <![CDATA[
+        <p>Dado el siguiente vector:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{}</tr>
+        </tbody>
+        </table>
+        <p>Rellene los valores del vector resultante al aplicar el método <em>heapsort</em>, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{}</tr>
+        </tbody>
+        </table>
+    """.format(''.join(['<td>{}</td>'.format(val) for val in vector]),
+               ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in vectorSolucion]))
+
+
+    generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
+    text_generalfeedback = ET.SubElement(generalfeedback, "text")
+
+    penalty = ET.SubElement(question, "penalty")
+    penalty.text = "0.3333333"
+
+    hidden = ET.SubElement(question, "hidden")
+    hidden.text = "0"
+
+    idnumber = ET.SubElement(question, "idnumber")
+
+    return question
+
+# Pregunta selección múltiple sobre la primera llamada de heapsort
+# Autor : Mario García Martínez
+def crear_pregunta_heapsort_multiple(vector, quiz):
+    vectorInicial = list(vector)
+
+    vectorOrdenado, vectorSolucion = heapSort(vectorInicial)
+    # Hacer copias de los vectores para las opciones
+    vectorOpcion1 = vectorInicial.copy()
+    vectorOpcion2 = vectorInicial.copy()
+
+    # Cambiamos un poco el orden de las opciones incorrectas
+    random.shuffle(vectorOpcion1)
+    random.shuffle(vectorOpcion2)
+
+    # Cambiamos el orden de las preguntas para que la respuesta correcta no sea siempre la misma opción
+    opciones = [vectorOpcion1, vectorOpcion2, vectorSolucion]
+    random.shuffle(opciones)
+
+    # Creamos el subelemento de pregunta
+    question = ET.SubElement(quiz, "question")
+    question.set("type", "multichoice")  # Cambia a multichoice
+
+    # Creamos el subelemento del vector heapsort que se debe ordenar
+    name = ET.SubElement(question, "name")
+    text_name = ET.SubElement(name, "text")
+    text_name.text = "heapsort " + str(vector)
+
+    # Creamos el subelemento de la pregunta del test para el formato html
+    questiontext = ET.SubElement(question, "questiontext", format="html")
+
+    # Creamos el subelemento del texto de la pregunta
+    text_question = ET.SubElement(questiontext, "text")
+
+    # Introducimos el enunciado de la pregunta
+    text_question.text = """
+        <![CDATA[
+        <p>Dado el siguiente vector:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{}</tr>
+        </tbody>
+        </table>
+        <p>¿Qué nuevo vector resultaría al aplicar el método <em>heapsort</em>, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? </p>
+    """.format(''.join(['<td>{}</td>'.format(val) for val in vector]))
+
+    # Agregamos opciones de respuesta
+    for opcion in opciones:
+        choice = ET.SubElement(question, "answer", fraction="100" if opcion == vectorSolucion else "0")
+        text_choice = ET.SubElement(choice, "text")
+        text_choice.text = f"<![CDATA[<p>{' '.join(map(str, opcion))}</p>"
+
+    generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
+    text_generalfeedback = ET.SubElement(generalfeedback, "text")
+    #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {', '.join(map(str, vectorSolucion))}</p>"
+
+
+    penalty = ET.SubElement(question, "penalty")
+    penalty.text = "0.3333333"
+
+    hidden = ET.SubElement(question, "hidden")
+    hidden.text = "0"
+
+    idnumber = ET.SubElement(question, "idnumber")
+
+    return question
+
+# Generador de cuestionarios de preguntas aleatorias sobre Heapsort
+# Autor : Mario García Martínez
+def generar_preguntas_heapsort (numero_preguntas):
+
+    # Creamos el elemento raíz del xml
+    quiz = ET.Element("quiz")
+
+    #Generamos un numero de preguntas a partir de la variable pasada por parámetro
+    for i in range(numero_preguntas):
+        #Inicializamos el vector que vamos a usar como pregunta
+        vector_aleatorio = []
+        #Generamos aleatoriamente la longitud de la pregunta
+        longitud = random.randint( LONGITUD_VECTOR_MIN , LONGITUD_VECTOR_MAX )
+        #Rellenamos los valores del vector con valores aleatorios
+        for i in range(longitud):
+            vector_aleatorio.append(random.randint(0,100))
+        
+        #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
+        pregunta_aleatoria = random.choice([crear_pregunta_heapsort, crear_pregunta_heapsort_multiple])   
+        pregunta_aleatoria(vector_aleatorio, quiz)
+
+    # Creamos el árbol XML y lo escribimos en un archivo
+    tree = ET.ElementTree(quiz)
+    tree.write("pregunta_heapsort.xml", encoding="utf-8", xml_declaration=True)
+
+generar_preguntas_heapsort(10)
+    
+    
+

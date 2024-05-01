@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmo de Ordenación Quicksort</title>
+    <title>Algoritmo de Ordenación Heapsort</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
 </head>
 <body>
     <header>
-        <h1>Algoritmo de Ordenación <strong>Quicksort</strong></h1>
+        <h1>Algoritmo de Ordenación <strong>Heapsort</strong></h1>
         <a href="https://github.com/mgm1027/TFG-Sorting-Algorithm-Quiz-Generation">
             <img class="github" src="../static/img/github.png" alt="Repositorio">
         </a>
@@ -23,15 +23,15 @@
     </nav>
     <div class="content">
         <p>
-            El algoritmo de ordenamiento rápido (o <strong>Quicksort</strong>) es un algoritmo de ordenación creado por el científico británico Charles Antony Richard Hoare.
-            El método Quicksort consiste en seleccionar un elemento de la lista como pivote, dejando a un lado todos los valores menores que él y al otro lado los mayores,
-            dejando dos sublistas de valores. Después únicamente se trata de repetir el proceso en ambas sublistas de forma <strong>recursiva</strong> hasta que la lista quede ordenada.
+            El algoritmo de ordenación por mezcla (o <strong>Mergesort</strong>) es un algoritmo de ordenamiento externo desarrollado por Jhon Von Neumann basado en la técnica divide y vencerás.
+            El método Mergesort consiste en dividir la lista desordenada de valores en dos sublistas prácticamente del mismo tamaño e ir ordenando de forma <strong>recursiva</strong> las dos
+            sublistas para luego mezclar las dos sublistas en una sola lista ordenada.
             
         </p>
-        <p><a href="https://es.wikipedia.org/wiki/Quicksort">
+        <p><a href="https://es.wikipedia.org/wiki/Ordenamiento_por_mezcla">
             <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
         </a></p>
-        <p><button type="button" onclick="window.location.href='/formularioQuicksort'">Generar cuestionario Quicksort</button></p>
+        <p><button type="button" onclick="window.location.href='/formularioHeapsort'">Generar cuestionario Heapsort</button></p>
 
 
     </div>
