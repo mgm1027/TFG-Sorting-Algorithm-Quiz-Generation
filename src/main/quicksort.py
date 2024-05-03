@@ -33,12 +33,75 @@ def quickSort_unidireccional(vector, inicio, fin):
 
     return vectorResultado, (izq - 1)
 
+def crear_pregunta_quicksort_indice(vector,quiz):
+    vectorInicial = list(vector)
+    vectorSolucion, finbidireccional = quickSort_bidireccional(list(vector), 0, (len(vector)-1) )
+    # Hacer copias de los vectores para las opciones
+    finb1 = finbidireccional + random.randint(-3,3)
+    finb2 = finbidireccional + random.randint(-3,3)
+
+    while finb1==finb2 or finb1== finbidireccional or finb2 == finbidireccional or finb1 <=0 or finb2 <=0:
+        finb1= finbidireccional + random.randint(-3,3)
+        finb2 = finbidireccional + random.randint(-3,3)
+    
+    # Cambiamos el orden de las preguntas para que la respuesta correcta no sea siempre la misma opción
+    opciones = [finb1, finb2, finbidireccional]
+    random.shuffle(opciones)
+
+    # Creamos el subelemento de pregunta
+    question = ET.SubElement(quiz, "question")
+    question.set("type", "multichoice")  # Cambia a multichoice
+
+    # Creamos el subelemento del vector quicksort que se debe ordenar
+    name = ET.SubElement(question, "name")
+    text_name = ET.SubElement(name, "text")
+    text_name.text = "Quicksort " + str(vector)
+
+    # Creamos el subelemento de la pregunta del test para el formato html
+    questiontext = ET.SubElement(question, "questiontext", format="html")
+
+    # Creamos el subelemento del texto de la pregunta
+    text_question = ET.SubElement(questiontext, "text")
+
+    # Introducimos el enunciado de la pregunta
+    text_question.text = """
+        <![CDATA[
+        <p>Dado el siguiente vector:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{}</tr>
+        </tbody>
+        </table>
+        <p>¿En que posición quedaría el pivote({}) tras realizar el proceso de partición del <em>quicksort</em></p>
+        <p>teniendo en cuenta que la primera posición corresponde a la posición 0? </p>
+    """.format(''.join(['<td>{}</td>'.format(val) for val in vector]),vector[0])
+
+    # Agregamos opciones de respuesta
+    for opcion in opciones:
+        choice = ET.SubElement(question, "answer", fraction="100" if opcion == finbidireccional else "0")
+        text_choice = ET.SubElement(choice, "text")
+        text_choice.text = f"<![CDATA[<p>{opcion}</p>"
+
+    generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
+    text_generalfeedback = ET.SubElement(generalfeedback, "text")
+    #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {finbidireccional}</p>"
+
+
+    penalty = ET.SubElement(question, "penalty")
+    penalty.text = "0.3333333"
+
+    hidden = ET.SubElement(question, "hidden")
+    hidden.text = "0"
+
+    idnumber = ET.SubElement(question, "idnumber")
+
+    return question
 
 # Método que calcula la primera partición obtenida tras pivotar
 # bidireccionalmente con el primer elemento como pivote del algoritmo
 # de ordenación Quicksort
 # Autor: Mario García Martínez
-
 def quickSort_bidireccional(vector, inicio, fin):
 
     # Copia del vector para no modificar el original
@@ -151,7 +214,14 @@ def crear_pregunta_quicksort_unidireccional_multiple(vector, quiz):
 
     # Cambiamos un poco el orden de las opciones incorrectas
     random.shuffle(vectorOpcion1)
+    
+    while(vectorOpcion1 == solucionUnidireccional):
+        random.shuffle(vectorOpcion1)
+
     random.shuffle(vectorOpcion2)
+
+    while(vectorOpcion2 == solucionUnidireccional):
+        random.shuffle(vectorOpcion2)
 
     # Cambiamos el orden de las preguntas para que la respuesta correcta no sea siempre la misma opción
     opciones = [vectorOpcion1, vectorOpcion2, solucionUnidireccional]
@@ -219,7 +289,14 @@ def crear_pregunta_quicksort_bidireccional_multiple(vector, quiz):
 
     # Cambiamos un poco el orden de las opciones incorrectas
     random.shuffle(vectorOpcion1)
+    
+    while(vectorOpcion1 == solucionbidireccional):
+        random.shuffle(vectorOpcion1)
+
     random.shuffle(vectorOpcion2)
+
+    while(vectorOpcion2 == solucionbidireccional):
+        random.shuffle(vectorOpcion2)
 
     # Cambiamos el orden de las preguntas para que la respuesta correcta no sea siempre la misma opción
     opciones = [vectorOpcion1, vectorOpcion2, solucionbidireccional]
@@ -302,7 +379,7 @@ def generar_preguntas_quicksort (numero_preguntas):
             vector_aleatorio.append(random.randint(0,100))
         
         #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
-        pregunta_aleatoria = random.choice([crear_pregunta_quicksort, crear_pregunta_quicksort_unidireccional_multiple, crear_pregunta_quicksort_bidireccional_multiple])   
+        pregunta_aleatoria = random.choice([crear_pregunta_quicksort, crear_pregunta_quicksort_unidireccional_multiple, crear_pregunta_quicksort_bidireccional_multiple, crear_pregunta_quicksort_indice])   
         pregunta_aleatoria(vector_aleatorio, quiz)
 
     # Creamos el árbol XML y lo escribimos en un archivo
@@ -310,3 +387,5 @@ def generar_preguntas_quicksort (numero_preguntas):
     tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
 
 generar_preguntas_quicksort(10)
+
+
