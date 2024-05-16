@@ -2,6 +2,8 @@ import xml.etree.ElementTree as ET
 import random
 import heapq
 from PIL import Image
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
@@ -656,7 +658,7 @@ def generar_preguntas_heapsort (numero_preguntas):
     tree = ET.ElementTree(quiz)
     tree.write("pregunta_heapsort.xml", encoding="utf-8", xml_declaration=True)
 
-generar_preguntas_heapsort(10)
+#generar_preguntas_heapsort(10)
     
     
 

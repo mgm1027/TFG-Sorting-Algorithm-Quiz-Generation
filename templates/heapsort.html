@@ -13,14 +13,19 @@
             <img class="github" src="../static/img/github.png" alt="Repositorio">
         </a>
     </header>
-    <nav>
-        <h2>Selecciona un algoritmo:</h2>
-        <ul>
-            <li><a href="/mergesort">Mergesort</a></li>
-            <li><a href="/quicksort">Quicksort</a></li>
-            <li><a href="/heapsort">Heapsort</a></li>
-        </ul>
+    <nav class="dropdown">
+        <div class="menu-wrapper">
+            <button class="dropbtn" onclick="toggleDropdown()">☰</button>
+            <span id="menu-title"><strong>Algoritmos de ordenación</strong></span>
+            <div id="dropdown-menu" class="dropdown-content">
+                <a href="/mergesort">Algoritmo de ordenación por mezcla Mergesort</a>
+                <a href="/quicksort">Algoritmo de ordenación rápida Quicksort</a>
+                <a href="/heapsort">Algoritmo de ordenación por montículos Heapsort</a>
+            </div>
+        </div>
     </nav>
+    
+    <script src="../static/js/script.js"></script>
     <div class="content">
         <p>
             El algoritmo de ordenación por mezcla (o <strong>Mergesort</strong>) es un algoritmo de ordenamiento externo desarrollado por Jhon Von Neumann basado en la técnica divide y vencerás.

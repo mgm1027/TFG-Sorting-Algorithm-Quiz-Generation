@@ -2,6 +2,8 @@ import xml.etree.ElementTree as ET
 import random
 import numpy as np
 from PIL import Image
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
@@ -664,6 +666,6 @@ def generar_preguntas_quicksort (numero_preguntas):
     tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
 
 
-generar_preguntas_quicksort(10)
+#generar_preguntas_quicksort(10)
 
 
