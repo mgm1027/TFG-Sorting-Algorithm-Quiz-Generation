@@ -27,7 +27,7 @@
     
     <script src="../static/js/script.js"></script>
     <div class="content">
-        <p>
+        <p class="p_div">
             El algoritmo de ordenación por mezcla (o <strong>Mergesort</strong>) es un algoritmo de ordenamiento externo desarrollado por Jhon Von Neumann basado en la técnica divide y vencerás.
             El método Mergesort consiste en dividir la lista desordenada de valores en dos sublistas prácticamente del mismo tamaño e ir ordenando de forma <strong>recursiva</strong> las dos
             sublistas para luego mezclar las dos sublistas en una sola lista ordenada.
@@ -36,15 +36,81 @@
         <p><a href="https://es.wikipedia.org/wiki/Ordenamiento_por_mezcla">
             <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
         </a></p>
-        <form method = 'POST' action="{{ url_for('formularioMergesort') }}">            
-            <div>               
-                <label for="numero_preguntas">            
-                    <br /><h3 data-i18n="preguntas"></h3><br />
+        <script>
+            function validarFormulario() {
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                var marcado = false;
+        
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        marcado = true;
+                    }
+                });
+        
+                if (!marcado) {
+                    alert("Debes marcar al menos una opción.");
+                    return false; // Evita que el formulario se envíe
+                }
+        
+                return true; // Permite que el formulario se envíe
+            }
+        </script>
+        <form class="formulario" method = 'POST' action="{{ url_for('formularioMergesort') }}" onsubmit="return validarFormulario()">            
+            <div>
+                <p>Número de preguntas:<input type="number" min="1" title="Número de preguntas" name="numero_preguntas" required></p> 
+                <p></p>
+                <p>Número mínimo de valores del vector:
+                    <input type="number" id="longitud_min" min="2" max="21"title="Rango mínimo del vector" name="longitud_min" required></p> 
+                <p></p>
+                <p>Número máximo de valores del vector:
+                    <input type="number" id="longitud_max" min="2" max="22"title="Rango máximo del vector" name="longitud_max" required></p> 
+                <p></p>
+                
+                <p>
+                    <p>
+                        <img  style="max-width: 50%; "src="../static/img/Mergesort_pregunta_seleccionar.PNG" alt="Mergesort_seleccionar">
+                    </p>
+                <label>
+                    ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_seleccionar" name="Pregunta_seleccionar" value="True">
                 </label>
-
-                    <p><input type="number" min="1" title="Número de preguntas" name="numero_preguntas" required></p> 
-                    <p></p>
-            </div>        
+                
+                </p>
+                <p></p>
+                <p>
+                    <img  style="max-width: 50%; "src="../static/img/Mergesort_pregunta_rellenar.PNG" alt="Mergesort_rellenar">
+                </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_rellenar" name="Pregunta_rellenar" value="True">
+            </label>
+            
+            </p>
+            <p></p>
+            <p>
+                <img  style="max-width: 50%; "src="../static/img/Mergesort_pregunta_comparaciones.PNG" alt="Mergesort_comparaciones">
+            </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_comparaciones" name="Pregunta_comparaciones" value="True">
+            </label>
+                
+            </p>
+            <p></p>
+            <p>
+                <img  style="max-width: 50%; "src="../static/img/Mergesort_pregunta_imagen.PNG" alt="Mergesort_imagen">
+            </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_imagen" name="Pregunta_imagen" value="True">
+            </label>
+                
+            </p>
+  
+                <script>
+                    document.getElementById('longitud_min').addEventListener('input', function() {
+                        var minVal = this.value;
+                        var maxInput = document.getElementById('longitud_max');
+                        maxInput.min = minVal;
+                    });
+                </script>
+        </div>        
             <div> 
                 <div></div>
                 <button class="button" type="submit">
@@ -57,9 +123,10 @@
             </div>
         </div>
     </form>
-        <a href="inicio.html">
-            <img class="img1" src="../static/img/logo.png" alt="Logo">
-        </a>
+    </script>
+    <a href="inicio.html">
+        <img class="img1" src="../static/img/logo.png" alt="Logo">
+    </a>
     </div>
     <footer>
         <a href="https://www.ubu.es">

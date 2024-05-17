@@ -12,8 +12,8 @@ import numpy as np
 import string
 
 
-LONGITUD_VECTOR_MIN = 5
-LONGITUD_VECTOR_MAX = 10
+longitud_vector_min = 5
+longitud_vector_max = 10
 
 #Creamos una clase para el arbol binario del heapsort
 class ArbolNodos:
@@ -634,8 +634,11 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
 
 # Generador de cuestionarios de preguntas aleatorias sobre Heapsort
 # Autor : Mario García Martínez
-def generar_preguntas_heapsort (numero_preguntas):
-
+def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max):
+    global longitud_vector_min
+    global longitud_vector_max
+    longitud_vector_min= longitud_min
+    longitud_vector_max= longitud_max
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
 
@@ -644,14 +647,14 @@ def generar_preguntas_heapsort (numero_preguntas):
         #Inicializamos el vector que vamos a usar como pregunta
         vector_aleatorio = []
         #Generamos aleatoriamente la longitud de la pregunta
-        longitud = random.randint( LONGITUD_VECTOR_MIN , LONGITUD_VECTOR_MAX )
+        longitud = random.randint(longitud_vector_min , longitud_vector_max)
         #Rellenamos los valores del vector con valores aleatorios
         for i in range(longitud):
             vector_aleatorio.append(random.randint(0,100))
-        
+        #
         #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
-        pregunta_aleatoria = random.choice([crear_pregunta_heapsort_completar_heappush,crear_pregunta_heapsort_completar_heapify,crear_pregunta_heapsort_imagen_heappush,
-                                            crear_pregunta_heapsort_imagen_heapify])   
+        pregunta_aleatoria = random.choice([crear_pregunta_heapsort_completar_heappush,crear_pregunta_heapsort_completar_heapify,
+                                            crear_pregunta_heapsort_imagen_heappush,crear_pregunta_heapsort_imagen_heapify])   
         pregunta_aleatoria(vector_aleatorio, quiz)
 
     # Creamos el árbol XML y lo escribimos en un archivo

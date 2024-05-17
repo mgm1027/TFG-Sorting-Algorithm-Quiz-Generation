@@ -27,7 +27,19 @@ def formularioMergesort():
     if request.method == 'GET':
         return render_template('formularioMergesort.html')
     numero_preguntas= int(request.form.get('numero_preguntas'))
-    src.main.mergesort.generar_preguntas_mergesort(numero_preguntas)
+    longitud_min= int(request.form.get('longitud_min'))
+    longitud_max= int(request.form.get('longitud_max'))
+    preguntas=[]
+    print(bool(request.form.get('Pregunta_seleccionar')))
+    print(bool(request.form.get('Pregunta_rellenar')))
+    print(bool(request.form.get('Pregunta_comparaciones')))
+    print(bool(request.form.get('Pregunta_imagen')))
+    preguntas.append(bool(request.form.get('Pregunta_seleccionar')))
+    preguntas.append(bool(request.form.get('Pregunta_rellenar')))
+    preguntas.append(bool(request.form.get('Pregunta_comparaciones')))
+    preguntas.append(bool(request.form.get('Pregunta_imagen')))
+
+    src.main.mergesort.generar_preguntas_mergesort(numero_preguntas, longitud_min,longitud_max, preguntas)
     return redirect(url_for('datosMergesort'))
 
 @app.route('/formularioQuicksort', methods=['GET','POST'])
@@ -35,7 +47,9 @@ def formularioQuicksort():
     if request.method == 'GET':
         return render_template('formularioQuicksort.html')
     numero_preguntas= int(request.form.get('numero_preguntas'))
-    src.main.quicksort.generar_preguntas_quicksort(numero_preguntas)
+    longitud_min= int(request.form.get('longitud_min'))
+    longitud_max= int(request.form.get('longitud_max'))
+    src.main.quicksort.generar_preguntas_quicksort(numero_preguntas, longitud_min,longitud_max)
     return redirect(url_for('datosQuicksort'))
 
 @app.route('/formularioHeapsort', methods=['GET','POST'])
@@ -43,7 +57,9 @@ def formularioHeapsort():
     if request.method == 'GET':
         return render_template('formularioHeapsort.html')
     numero_preguntas= int(request.form.get('numero_preguntas'))
-    src.main.heapsort.generar_preguntas_heapsort(numero_preguntas)
+    longitud_min= int(request.form.get('longitud_min'))
+    longitud_max= int(request.form.get('longitud_max'))
+    src.main.heapsort.generar_preguntas_heapsort(numero_preguntas, longitud_min,longitud_max)
     return redirect(url_for('datosHeapsort'))
 
 @app.route('/datosQuicksort')

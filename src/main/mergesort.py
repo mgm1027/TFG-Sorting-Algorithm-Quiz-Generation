@@ -9,8 +9,8 @@ from io import BytesIO
 import base64
 import os
 
-LONGITUD_VECTOR_MIN = 5
-LONGITUD_VECTOR_MAX = 10
+longitud_vector_min = 5
+longitud_vector_max = 10
 
 contador = 0
 
@@ -404,23 +404,40 @@ def crear_pregunta_mergesort_multiple(vector, quiz):
 
 # Generador de cuestionarios de preguntas aleatorias sobre Mergesort
 # Autor : Mario García Martínez
-def generar_preguntas_mergesort (numero_preguntas):
-
+def generar_preguntas_mergesort (numero_preguntas, longitud_min, longitud_max, preguntas):
+    global longitud_vector_min
+    global longitud_vector_max
+    longitud_vector_min= longitud_min
+    longitud_vector_max= longitud_max
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
+    print(preguntas)
+    preguntas_incluidas=[]
+    if preguntas[0]== True:
+        preguntas_incluidas.append(crear_pregunta_mergesort_multiple)
+        
+    if preguntas[1]== True:
+        preguntas_incluidas.append(crear_pregunta_mergesort)
+        
+    if preguntas[2]== True:
+        preguntas_incluidas.append(crear_pregunta_mergesort_contador)
+        
+    if preguntas[3]== True:
+        preguntas_incluidas.append(crear_pregunta_mergesort_multiple_imagen)
+    
 
     #Generamos un numero de preguntas a partir de la variable pasada por parámetro
     for i in range(numero_preguntas):
         #Inicializamos el vector que vamos a usar como pregunta
         vector_aleatorio = []
         #Generamos aleatoriamente la longitud de la pregunta
-        longitud = random.randint( LONGITUD_VECTOR_MIN , LONGITUD_VECTOR_MAX )
+        longitud = random.randint( longitud_vector_min , longitud_vector_max )
         #Rellenamos los valores del vector con valores aleatorios
         for i in range(longitud):
             vector_aleatorio.append(random.randint(0,100))
         
         #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
-        pregunta_aleatoria = random.choice([crear_pregunta_mergesort, crear_pregunta_mergesort_multiple,crear_pregunta_mergesort_multiple_imagen, crear_pregunta_mergesort_contador])   
+        pregunta_aleatoria = random.choice(preguntas_incluidas)   
         pregunta_aleatoria(vector_aleatorio, quiz)
 
     # Creamos el árbol XML y lo escribimos en un archivo
