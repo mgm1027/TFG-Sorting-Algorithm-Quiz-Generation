@@ -72,7 +72,16 @@ def formularioHeapsort():
     numero_preguntas= int(request.form.get('numero_preguntas'))
     longitud_min= int(request.form.get('longitud_min'))
     longitud_max= int(request.form.get('longitud_max'))
-    src.main.heapsort.generar_preguntas_heapsort(numero_preguntas, longitud_min,longitud_max)
+    preguntas=[]
+    print(bool(request.form.get('Pregunta_seleccionar_heapify')))
+    print(bool(request.form.get('Pregunta_seleccionar_heappush')))
+    print(bool(request.form.get('Pregunta_rellenar_heapify')))
+    print(bool(request.form.get('Pregunta_rellenar_heappush')))
+    preguntas.append(bool(request.form.get('Pregunta_seleccionar_heapify')))
+    preguntas.append(bool(request.form.get('Pregunta_seleccionar_heappush')))
+    preguntas.append(bool(request.form.get('Pregunta_rellenar_heapify')))
+    preguntas.append(bool(request.form.get('Pregunta_rellenar_heappush')))
+    src.main.heapsort.generar_preguntas_heapsort(numero_preguntas, longitud_min,longitud_max, preguntas)
     return redirect(url_for('datosHeapsort'))
 
 @app.route('/datosQuicksort')
