@@ -36,7 +36,26 @@
         <p><a href="https://es.wikipedia.org/wiki/Quicksort">
             <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
         </a></p>
-        <form class="formulario"  method = 'POST' action="{{ url_for('formularioQuicksort') }}">            
+        <script>
+            function validarFormulario() {
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                var marcado = false;
+        
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        marcado = true;
+                    }
+                });
+        
+                if (!marcado) {
+                    alert("Debes marcar al menos una opción.");
+                    return false; // Evita que el formulario se envíe
+                }
+        
+                return true; // Permite que el formulario se envíe
+            }
+        </script>
+        <form class="formulario" method = 'POST' action="{{ url_for('formularioQuicksort') }}" onsubmit="return validarFormulario()">            
             <div>
                 <p>Número de preguntas:<input type="number" min="1" title="Número de preguntas" name="numero_preguntas" required></p> 
                 <p></p>
@@ -46,6 +65,62 @@
                 <p>Número máximo de valores del vector:
                     <input type="number" id="longitud_max" min="2" max="22"title="Rango máximo del vector" name="longitud_max" required></p> 
                 <p></p>
+                
+                <p>
+                    <p>
+                        <img  style="max-width: 50%; "src="../static/img/Quicksort_pregunta_seleccionar_unidireccional.PNG" alt="Quicksort_seleccionar_unidireccional">
+                    </p>
+                <label>
+                    ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_seleccionar_unidireccional" name="Pregunta_seleccionar_unidireccional" value="True">
+                </label>
+                
+                </p>
+                <p></p>
+                <p>
+                    <img  style="max-width: 50%; "src="../static/img/Quicksort_pregunta_seleccionar_bidireccional.PNG" alt="Quicksort_seleccionar_bidireccional">
+                </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_seleccionar_bidireccional" name="Pregunta_seleccionar_bidireccional" value="True">
+            </label>
+            
+            </p>
+            <p></p>
+            <p>
+                <img  style="max-width: 50%; "src="../static/img/Quicksort_pregunta_rellenar.PNG" alt="Quicksort_rellenar">
+            </p>
+        <label>
+            ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_rellenar" name="Pregunta_rellenar" value="True">
+        </label>
+        
+        </p>
+        <p></p>
+            <p>
+                <img  style="max-width: 50%; "src="../static/img/Quicksort_pregunta_pivote.PNG" alt="Quicksort_pivote">
+            </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_pivote" name="Pregunta_pivote" value="True">
+            </label>
+                
+            </p>
+            <p></p>
+            <p>
+                <img  style="max-width: 50%; "src="../static/img/Quicksort_pregunta_imagen_unidireccional.PNG" alt="Quicksort_imagen_unidireccional">
+            </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_imagen_unidireccional" name="Pregunta_imagen_unidireccional" value="True">
+            </label>
+                
+            </p>
+            <p></p>
+            <p>
+                <img  style="max-width: 50%; "src="../static/img/Quicksort_pregunta_imagen_bidireccional.PNG" alt="Quicksort_imagen_bidireccional">
+            </p>
+            <label>
+                ¿Incluir este tipo de pregunta?<input type="checkbox" id="Pregunta_imagen_bidireccional" name="Pregunta_imagen_bidireccional" value="True">
+            </label>
+                
+            </p>
+  
                 <script>
                     document.getElementById('longitud_min').addEventListener('input', function() {
                         var minVal = this.value;
@@ -53,18 +128,20 @@
                         maxInput.min = minVal;
                     });
                 </script>
-            </div>        
-                <div> 
-                    <div></div>
-                    <button class="button" type="submit">
-                        <h4 data-i18n="generar_fichero">Generar Fichero</h4>
-                    </button>
+        </div>        
+            <div> 
+                <div></div>
+                <button class="button" type="submit">
+                    <h4 data-i18n="generar_fichero">Generar Fichero</h4>
+                </button>
                     <a href="/quicksort"><button class="button" type="button" > 
                         <h4 data-i18n="cancelar">Cancelar</h4></button></a>
-                    </div>
+
                 </div>
             </div>
-        </form>
+        </div>
+    </form>
+    </script>
         <a href="inicio.html">
             <img class="img1" src="../static/img/logo.png" alt="Logo">
         </a>

@@ -641,13 +641,31 @@ def crear_pregunta_quicksort_bidireccional_multiple_imagen(vector, quiz):
 
 # Generador de cuestionarios de preguntas aleatorias sobre Quicksort
 # Autor : Mario García Martínez
-def generar_preguntas_quicksort (numero_preguntas, longitud_min, longitud_max):
+def generar_preguntas_quicksort (numero_preguntas, longitud_min, longitud_max, preguntas):
     global longitud_vector_min
     global longitud_vector_max
     longitud_vector_min= longitud_min
     longitud_vector_max= longitud_max
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
+    print(preguntas)
+    preguntas_incluidas=[]
+    if preguntas[0]== True:
+        preguntas_incluidas.append(crear_pregunta_quicksort_unidireccional_multiple)
+    if preguntas[1]== True:
+        preguntas_incluidas.append(crear_pregunta_quicksort_unidireccional_multiple)
+        
+    if preguntas[2]== True:
+        preguntas_incluidas.append(crear_pregunta_quicksort)
+        
+    if preguntas[3]== True:
+        preguntas_incluidas.append(crear_pregunta_quicksort_indice)
+        
+    if preguntas[4]== True:
+        preguntas_incluidas.append(crear_pregunta_quicksort_unidireccional_multiple_imagen)
+
+    if preguntas[5]== True:
+        preguntas_incluidas.append(crear_pregunta_quicksort_bidireccional_multiple_imagen)
 
     #Generamos un numero de preguntas a partir de la variable pasada por parámetro
     for i in range(numero_preguntas):
@@ -660,8 +678,7 @@ def generar_preguntas_quicksort (numero_preguntas, longitud_min, longitud_max):
             vector_aleatorio.append(random.randint(0,100))
         
         #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
-        pregunta_aleatoria = random.choice([crear_pregunta_quicksort, crear_pregunta_quicksort_unidireccional_multiple, crear_pregunta_quicksort_bidireccional_multiple, crear_pregunta_quicksort_indice
-                                            ,crear_pregunta_quicksort_unidireccional_multiple_imagen,crear_pregunta_quicksort_bidireccional_multiple_imagen])   
+        pregunta_aleatoria = random.choice(preguntas_incluidas)   
         pregunta_aleatoria(vector_aleatorio, quiz)
 
     # Creamos el árbol XML y lo escribimos en un archivo
