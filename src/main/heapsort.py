@@ -251,7 +251,7 @@ def crear_pregunta_heapsort_imagen_heapify(vector, quiz):
         <tr>{''.join(['<td>{}</td>'.format(val) for val in vector])}</tr>
         </tbody>
         </table>
-        <p>¿ En qué posición del árbol quedaría el valor ({valorSeleccionado}) una vez ordenado con el método <em>heapsort</em> reordenando una vector con sus valores ya generados (<em>heapify</em>)?</p>
+        <p>¿ En qué posición del árbol quedaría el valor ({valorSeleccionado}) una vez ordenado con el método <em>heapsort</em> reordenando una vector con sus valores ya generados (<em>heapify</em>)</p>
         <p><img src="@@PLUGINFILE@@/ImagenHeapsort{vectorInicial}.jpg" alt="" width="580" height="415" style="vertical-align:text-bottom; margin: 0 .5em;"><br></p>
     """
 
@@ -437,8 +437,88 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
         <tr>{''.join(['<td>{}</td>'.format(val) for val in vector])}</tr>
         </tbody>
         </table>
-        <p>Completa el árbol binario con los valores del vector en la posición correcta una vez ordenado con el método <em>heapsort</em> reordenando una vector a medida que se van introduciendo valores en dicho vector (<em>heappush</em>)?</p>
+        <p>Completa el árbol binario con los valores del vector en la posición correcta una vez ordenado con el método <em>heapsort</em> reordenando una vector a medida que se van introduciendo valores en dicho vector (<em>heappush</em>)</p>
         <p><img src="@@PLUGINFILE@@/ImagenHeapsort{vectorInicial}.jpg" alt="" width="580" height="415" style="vertical-align:text-bottom; margin: 0 .5em;"><br></p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{opciones_row}</tr>
+        <tr>{solucion_heappush_row}</tr>
+        </tbody>
+        </table>
+        """
+    
+def crear_pregunta_heapsort_completar_maximos(vector, quiz):
+    vectorInicial = list(vector)
+
+    #Vamos reordenando los valores a medida que los vamos añadiendo a la lista con el método heappush
+    
+    vectorOrdenado, monticuloMaximo = heapSort(vectorInicial)
+
+    # valorSeleccionado= random.choice(vectorInicial)
+    # posiciónSeleccionada=vectorSolucionPush.index(valorSeleccionado)
+
+    # Generamos las opciones
+    opciones= generar_lista_letras(len(vectorInicial))
+    #Generamos el arbol a partir de las opciones y codificamos las imágenes generadas a base64 para poder mostrarlas en el archivo xml sin tener que almacenarlas
+
+    arbol= convertir_arbol(vector)
+    visualizar_arbol(arbol)
+    plt.savefig(f'ImagenHeapsort{vectorInicial}.jpg')
+    plt.close()
+
+    imagen = plt.imread(f'ImagenHeapsort{vectorInicial}.jpg')
+    imagenPillow = Image.fromarray(np.uint8(imagen))
+    buffer = BytesIO()
+    imagenPillow.save(buffer, format="JPEG")
+    imagen64 = base64.b64encode(buffer.getvalue())
+    imagenFinal=imagen64.decode("utf-8")
+
+    arbol= convertir_arbol(opciones)
+    visualizar_arbol(arbol)
+    plt.savefig(f'ImagenHeapsort{vectorInicial}-2.jpg')
+    plt.close()
+
+    imagen = plt.imread(f'ImagenHeapsort{vectorInicial}-2.jpg')
+    imagenPillow = Image.fromarray(np.uint8(imagen))
+    buffer = BytesIO()
+    imagenPillow.save(buffer, format="JPEG")
+    imagen64 = base64.b64encode(buffer.getvalue())
+    imagenFinal2=imagen64.decode("utf-8")
+
+    # Creamos el subelemento de pregunta
+    question = ET.SubElement(quiz, "question")
+    question.set("type", "cloze") 
+
+    # Creamos el subelemento del vector mergesort que se debe ordenar
+    name = ET.SubElement(question, "name")
+    text_name = ET.SubElement(name, "text")
+    text_name.text = "Heapsort " + str(vector)
+
+    # Creamos el subelemento de la pregunta del test para el formato html
+    questiontext = ET.SubElement(question, "questiontext", format="html")
+
+    # Creamos el subelemento del texto de la pregunta
+    text_question = ET.SubElement(questiontext, "text")
+
+    # Generar la fila de la tabla con las opciones
+    opciones_row = ''.join(['<td>{}</td>'.format(opcion) for opcion in opciones])
+
+    # Generar la fila de la tabla con los campos a rellenar de solucionHeapify
+    solucion_heappush_row = ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in monticuloMaximo])
+
+    # Introducimos el enunciado de la pregunta
+    text_question.text = f"""
+        <![CDATA[
+        <p>Dado el siguiente vector:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{''.join(['<td>{}</td>'.format(val) for val in vector])}</tr>
+        </tbody>
+        </table>
+        <p>Teniendo en cuenta que esta imagen representa el árbol binario del vector sin ordenar
+        <p><img src="@@PLUGINFILE@@/ImagenHeapsort{vectorInicial}.jpg" alt="" width="580" height="415" style="vertical-align:text-bottom; margin: 0 .5em;"><br></p>
+        <p>Completa el árbol binario del algoritmo <em>heapsort</em> con los valores del vector en la posición correcta una vez se ha construido el montículo de <em>máximos</em> antes de comenzar la extración del primer valor máximo</p>
+        <p><img src="@@PLUGINFILE@@/ImagenHeapsort{vectorInicial}-2.jpg" alt="" width="580" height="415" style="vertical-align:text-bottom; margin: 0 .5em;"><br></p>
         <table border="1" align="center">
         <tbody>
         <tr>{opciones_row}</tr>
@@ -454,12 +534,17 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
     archivo.set('path', "/")
     archivo.set('encoding', "base64")
     archivo.text = f"""{imagenFinal}"""
+    archivo=ET.SubElement(questiontext, f'file')
+    archivo.set('name', f"ImagenHeapsort{vectorInicial}-2.jpg")
+    archivo.set('path', "/")
+    archivo.set('encoding', "base64")
+    archivo.text = f"""{imagenFinal2}"""
         
 
     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
     text_generalfeedback = ET.SubElement(generalfeedback, "text")
     #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
-    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {vectorSolucionPush}</p>"
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {monticuloMaximo}</p>"
 
 
     penalty = ET.SubElement(question, "penalty")
@@ -472,42 +557,50 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
 
     #Eliminamos todas las imágenes almacenadas anteriormente
     os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
+
+    os.remove(f'ImagenHeapsort{vectorInicial}-2.jpg')
     return question
-# # Método que ordena un montículo de el algoritmo de ordenación Heapsort
-# # Autor : Mario García Martínez
-# def heapify(vector, n, i):
-#   mayor = i
-#   izq = 2 * i + 1
-#   der = 2 * i + 2
 
-#   if izq < n and vector[i] < vector[izq]:
-#       mayor = izq
 
-#   if der < n and vector[mayor] < vector[der]:
-#       mayor = der
 
-#   if mayor != i:
-#       vector[i], vector[mayor] = vector[mayor], vector[i]
-#       heapify(vector, n, mayor)
+# Método que ordena un montículo de el algoritmo de ordenación Heapsort
+# Autor : Mario García Martínez
+def heapimax(vector, n, i):
+  mayor = i
+  izq = 2 * i + 1
+  der = 2 * i + 2
 
-# # Método que ordena una lista por medio del algoritmo de ordenación por montículos o Heapsort
-# # Devuelve la ista ordenada además de la ultima iteración de la lista sin ordenar
-# # Autor : Mario García Martínez
-# def heapSort(vector):
-#     vectorResultado = vector
-#     ultimoVector = vector
-#     n = len(vectorResultado)
+  if izq < n and vector[i] < vector[izq]:
+      mayor = izq
 
-#     for i in range(n//2, -1, -1):
-#         heapify(vectorResultado, n, i)
-        
-#     ultimoVector= list(vectorResultado)
-#     for i in range(n-1, 0, -1):
-#         vectorResultado[i], vectorResultado[0] = vectorResultado[0], vectorResultado[i]
+  if der < n and vector[mayor] < vector[der]:
+      mayor = der
 
-#         heapify(vector, i, 0)
+  if mayor != i:
+      vector[i], vector[mayor] = vector[mayor], vector[i]
+      heapimax(vector, n, mayor)
+
+# Método que ordena una lista por medio del algoritmo de ordenación por montículos o Heapsort
+# Devuelve la ista ordenada además de la ultima iteración de la lista sin ordenar
+# Autor : Mario García Martínez
+def heapSort(vector):
+    vectorResultado = vector
+    ultimoVector = vector
+    n = len(vectorResultado)
+
+    #Ordenamos el montículo de máximos
+    for i in range(n//2, -1, -1):
+        heapimax(vectorResultado, n, i)
     
-#     return vectorResultado, ultimoVector
+        
+    ultimoVector= list(vectorResultado)
+    for i in range(n-1, 0, -1):
+        vectorResultado[i], vectorResultado[0] = vectorResultado[0], vectorResultado[i]
+
+        heapimax(vector, i, 0)
+    
+    return vectorResultado, ultimoVector
+
 
 
 # # Pregunta de ejemplo sobre la primera llamada tras ejecutar heapsort(ordenación por montículos)
@@ -634,15 +727,13 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
 
 # Generador de cuestionarios de preguntas aleatorias sobre Heapsort
 # Autor : Mario García Martínez
-def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max,preguntas):
+def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max, preguntas):
     global longitud_vector_min
     global longitud_vector_max
     longitud_vector_min= longitud_min
     longitud_vector_max= longitud_max
     # Creamos el elemento raíz del xml
     quiz = ET.Element("quiz")
-
-    print(preguntas)
     preguntas_incluidas=[]
     if preguntas[0]== True:
         preguntas_incluidas.append(crear_pregunta_heapsort_imagen_heapify)
@@ -655,6 +746,8 @@ def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max,pre
         
     if preguntas[3]== True:
         preguntas_incluidas.append(crear_pregunta_heapsort_completar_heappush)
+    if preguntas[4]== True:
+        preguntas_incluidas.append(crear_pregunta_heapsort_completar_maximos)
 
     #Generamos un numero de preguntas a partir de la variable pasada por parámetro
     for i in range(numero_preguntas):
@@ -674,7 +767,6 @@ def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max,pre
     tree = ET.ElementTree(quiz)
     tree.write("pregunta_heapsort.xml", encoding="utf-8", xml_declaration=True)
 
-#generar_preguntas_heapsort(10)
     
     
 
