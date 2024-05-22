@@ -527,6 +527,95 @@ def crear_pregunta_heapsort_completar_maximos(vector, quiz):
         </table>
         """
     
+def crear_pregunta_heapsort_extraccion(vector, quiz):
+    vectorInicial = list(vector)
+
+    #Vamos reordenando los valores a medida que los vamos añadiendo a la lista con el método heappush
+    
+    vectorOrdenado, monticuloMaximo = heapSort(vectorInicial)
+
+    # valorSeleccionado= random.choice(vectorInicial)
+    # posiciónSeleccionada=vectorSolucionPush.index(valorSeleccionado)
+
+    
+    #Generamos el arbol a partir de las opciones y codificamos las imágenes generadas a base64 para poder mostrarlas en el archivo xml sin tener que almacenarlas
+
+    arbol= convertir_arbol(monticuloMaximo)
+    visualizar_arbol(arbol)
+    plt.savefig(f'ImagenHeapsort{vectorInicial}.jpg')
+    plt.close()
+
+    imagen = plt.imread(f'ImagenHeapsort{vectorInicial}.jpg')
+    imagenPillow = Image.fromarray(np.uint8(imagen))
+    buffer = BytesIO()
+    imagenPillow.save(buffer, format="JPEG")
+    imagen64 = base64.b64encode(buffer.getvalue())
+    imagenFinal=imagen64.decode("utf-8")
+
+    #Generamos y reordenamos el montículo
+
+    nuevoMonticulo= list(monticuloMaximo)
+    nuevoMonticulo[0]= nuevoMonticulo[len(nuevoMonticulo)-1]
+    monticuloFinal= nuevoMonticulo[:-1]
+    vectorOrdenado, monticuloSolucion = heapSort(monticuloFinal)
+    
+    # Generamos las opciones
+    opciones= generar_lista_letras(len(monticuloSolucion))
+
+    arbol= convertir_arbol(opciones)
+    visualizar_arbol(arbol)
+    plt.savefig(f'ImagenHeapsort{vectorInicial}-2.jpg')
+    plt.close()
+
+    imagen = plt.imread(f'ImagenHeapsort{vectorInicial}-2.jpg')
+    imagenPillow = Image.fromarray(np.uint8(imagen))
+    buffer = BytesIO()
+    imagenPillow.save(buffer, format="JPEG")
+    imagen64 = base64.b64encode(buffer.getvalue())
+    imagenFinal2=imagen64.decode("utf-8")
+
+    # Creamos el subelemento de pregunta
+    question = ET.SubElement(quiz, "question")
+    question.set("type", "cloze") 
+
+    # Creamos el subelemento del vector mergesort que se debe ordenar
+    name = ET.SubElement(question, "name")
+    text_name = ET.SubElement(name, "text")
+    text_name.text = "Heapsort " + str(vector)
+
+    # Creamos el subelemento de la pregunta del test para el formato html
+    questiontext = ET.SubElement(question, "questiontext", format="html")
+
+    # Creamos el subelemento del texto de la pregunta
+    text_question = ET.SubElement(questiontext, "text")
+
+    # Generar la fila de la tabla con las opciones
+    opciones_row = ''.join(['<td>{}</td>'.format(opcion) for opcion in opciones])
+
+    # Generar la fila de la tabla con los campos a rellenar de solucionHeapify
+    solucion_heappush_row = ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in monticuloSolucion])
+
+    # Introducimos el enunciado de la pregunta
+    text_question.text = f"""
+        <![CDATA[
+        <p>Dado el siguiente vector:</p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{''.join(['<td>{}</td>'.format(val) for val in vector])}</tr>
+        </tbody>
+        </table>
+        <p>Teniendo en cuenta que esta imagen representa el árbol binario del vector tras producirse la construcción del montículo de <em>máximos</em>:</p>
+        <p><img src="@@PLUGINFILE@@/ImagenHeapsort{vectorInicial}.jpg" alt="" width="580" height="415" style="vertical-align:text-bottom; margin: 0 .5em;"><br></p>
+        <p>Completa el árbol binario del algoritmo <em>heapsort</em> continuando la construcción del montículo tras sustituirse el valor que se encontraba en la raíz por el último valor del árbol.</p>
+        <p><img src="@@PLUGINFILE@@/ImagenHeapsort{vectorInicial}-2.jpg" alt="" width="580" height="415" style="vertical-align:text-bottom; margin: 0 .5em;"><br></p>
+        <table border="1" align="center">
+        <tbody>
+        <tr>{opciones_row}</tr>
+        <tr>{solucion_heappush_row}</tr>
+        </tbody>
+        </table>
+        """
+    
     #Guardamos en el archivo la imagen codificada correspondiente para que se pueda visualizar en el xml
     
     archivo=ET.SubElement(questiontext, f'file')
@@ -544,7 +633,7 @@ def crear_pregunta_heapsort_completar_maximos(vector, quiz):
     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
     text_generalfeedback = ET.SubElement(generalfeedback, "text")
     #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
-    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {monticuloMaximo}</p>"
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {monticuloSolucion}</p>"
 
 
     penalty = ET.SubElement(question, "penalty")
@@ -748,6 +837,8 @@ def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max, pr
         preguntas_incluidas.append(crear_pregunta_heapsort_completar_heappush)
     if preguntas[4]== True:
         preguntas_incluidas.append(crear_pregunta_heapsort_completar_maximos)
+    if preguntas[5]== True:
+        preguntas_incluidas.append(crear_pregunta_heapsort_extraccion)
 
     #Generamos un numero de preguntas a partir de la variable pasada por parámetro
     for i in range(numero_preguntas):
