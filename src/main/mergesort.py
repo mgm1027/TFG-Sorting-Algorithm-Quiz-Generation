@@ -433,8 +433,14 @@ def generar_preguntas_mergesort (numero_preguntas, longitud_min, longitud_max, p
         #Generamos aleatoriamente la longitud de la pregunta
         longitud = random.randint( longitud_vector_min , longitud_vector_max )
         #Rellenamos los valores del vector con valores aleatorios
-        for i in range(longitud):
-            vector_aleatorio.append(random.randint(0,100))
+        valores_unicos = set()
+
+        while len(vector_aleatorio) < longitud:
+            valor = random.randint(0, 100)
+            if valor not in valores_unicos:
+                vector_aleatorio.append(valor)
+                valores_unicos.add(valor)
+
         
         #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
         pregunta_aleatoria = random.choice(preguntas_incluidas)   

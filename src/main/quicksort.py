@@ -671,11 +671,15 @@ def generar_preguntas_quicksort (numero_preguntas, longitud_min, longitud_max, p
     for i in range(numero_preguntas):
         #Inicializamos el vector que vamos a usar como pregunta
         vector_aleatorio = []
+        valores_unicos = set()
         #Generamos aleatoriamente la longitud de la pregunta
         longitud = random.randint( longitud_vector_min , longitud_vector_max )
         #Rellenamos los valores del vector con valores aleatorios
-        for i in range(longitud):
-            vector_aleatorio.append(random.randint(0,100))
+        while len(vector_aleatorio) < longitud:
+            valor = random.randint(0, 100)
+            if valor not in valores_unicos:
+                vector_aleatorio.append(valor)
+                valores_unicos.add(valor)
         
         #Creamos la pregunta una vez tenemos el vector aleatoriamente entre las distintas preguntas de las que disponemos
         pregunta_aleatoria = random.choice(preguntas_incluidas)   
