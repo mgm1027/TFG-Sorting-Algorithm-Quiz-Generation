@@ -52,6 +52,13 @@ nav ul li a {
     margin-left:10% ;
     line-height: 1.5;
 }
+.p_div_inicio{
+    margin-right: 10%;
+    margin-left:10% ;
+    line-height: 1.5;
+    font-size: 24px;
+    
+}
 .img1 {
     position: absolute;
     top: 10px;
@@ -68,6 +75,7 @@ nav ul li a {
     margin-right: 10%;
     margin-left:10% ; 
 }
+
 
 
 .text-container {
