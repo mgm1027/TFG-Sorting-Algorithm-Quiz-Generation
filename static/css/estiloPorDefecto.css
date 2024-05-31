@@ -20,7 +20,7 @@ header {
 }
 nav {
     display: inline-block;
-    background: #f1f1f1;
+    background: #f5f5f5;
     padding: 20px;
 }
 nav ul {
@@ -121,10 +121,21 @@ footer {
     color: #fff;
     padding: 20px;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 footer img {
     width: 150px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+footer a {
+    display: flex; 
 }
 
 .dropdown {
@@ -184,4 +195,15 @@ footer img {
     font-weight: bold; /* Hace que el texto esté en negrita */
     margin-left: 10px; /* Espacio entre el botón y el título */
     margin-right: 10px; /* Espacio entre el título y el margen derecho */
+}
+
+#about-link {
+    margin-left: auto; /* Desplaza el enlace a la derecha */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    padding: 0 10px; /* Espaciado a los lados */
+    font-weight: bold; /* Negrita */
+}
+#about-link:hover {
+    color: #555; /* Color al pasar el ratón */
 }

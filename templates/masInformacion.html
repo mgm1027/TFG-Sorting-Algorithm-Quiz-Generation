@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmo de Ordenación Quicksort</title>
+    <title>Acerca del proyecto</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloPorDefecto.css') }}">
 </head>
 <body>
     <header>
-        <h1>Algoritmo de Ordenación <strong>Quicksort</strong></h1>
+        <h1>Acerca del proyecto</h1>
         <a href="https://github.com/mgm1027/TFG-Sorting-Algorithm-Quiz-Generation">
             <img class="github" src="../static/img/github.png" alt="Repositorio">
         </a>
@@ -28,18 +28,17 @@
     
     <script src="../static/js/script.js"></script>
     <div class="content">
-        <p class="p_div">
-            El algoritmo de ordenamiento rápido (o <strong>Quicksort</strong>) es un algoritmo de ordenación creado por el científico británico Charles Antony Richard Hoare.
-            El método Quicksort consiste en seleccionar un elemento de la lista como pivote, dejando a un lado todos los valores menores que él y al otro lado los mayores,
-            dejando dos sublistas de valores. Después únicamente se trata de repetir el proceso en ambas sublistas de forma <strong>recursiva</strong> hasta que la lista quede ordenada.
-            
+        <p class="p_div">MONDONGOEste proyecto se trata de un trabajo de fin de grado el cual se ha diseñado con el objetivo de simplificar la creación de cuestionarios en formato XML Moodle para
+            su uso en la docencia, concretamente para el ámbito de la ingeniería informática correspondiente a los diferentes algoritmos de ordenación. El objetivo es generar 
+            distintas preguntas con datos diferentes y de forma aleatoria con su correspondiente solución para minimizar el gasto de tiempo que se puede producir en la creación 
+            de un banco de preguntas de forma manual.
         </p>
-        <p><a href="https://es.wikipedia.org/wiki/Quicksort">
-            <img class="img2" src="../static/img/wikipedia.jpg" alt="wikipedia">
-        </a></p>
-        <p><button type="button" style="margin-right: 10%; margin-left:10%"  onclick="window.location.href='/formularioQuicksort'">Generar cuestionario Quicksort</button></p>
-
-
+        <p class="p_div">Por cada algoritmo seleccionado se podrá generar un determinado número de preguntas dado por el usuario y se podrá generar un archivo xml con el banco de preguntas en
+            cuestión. El archivo se podrá comprobar y visualizar en el siguiente enlance:
+        </p>
+        <a href="https://sandbox.moodledemo.net">
+            <img src="../static/img/moodle.PNG" alt="Foto" style="text-align: center; margin-right: 10%; margin-left: 10%;">
+        </a>
     </div>
     <a href="inicio.html">
         <img class="img1" src="../static/img/logo.png" alt="Logo">
@@ -55,5 +54,6 @@
             <img src="../static/img/ingenieriaInformatica.jpg" alt="EPS">
         </a>
     </footer>
+    
 </body>
 </html>

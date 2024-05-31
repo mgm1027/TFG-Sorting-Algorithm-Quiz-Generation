@@ -22,6 +22,10 @@ def quicksort():
 def heapsort():
     return render_template('heapsort.html')
 
+@app.route('/acercade')
+def acercade():
+    return render_template('masInformacion.html')
+
 @app.route('/formularioMergesort', methods=['GET','POST'])
 def formularioMergesort():
     if request.method == 'GET':
@@ -30,10 +34,6 @@ def formularioMergesort():
     longitud_min= int(request.form.get('longitud_min'))
     longitud_max= int(request.form.get('longitud_max'))
     preguntas=[]
-    print(bool(request.form.get('Pregunta_seleccionar')))
-    print(bool(request.form.get('Pregunta_rellenar')))
-    print(bool(request.form.get('Pregunta_comparaciones')))
-    print(bool(request.form.get('Pregunta_imagen')))
     preguntas.append(bool(request.form.get('Pregunta_seleccionar')))
     preguntas.append(bool(request.form.get('Pregunta_rellenar')))
     preguntas.append(bool(request.form.get('Pregunta_comparaciones')))
@@ -50,12 +50,6 @@ def formularioQuicksort():
     longitud_min= int(request.form.get('longitud_min'))
     longitud_max= int(request.form.get('longitud_max'))
     preguntas=[]
-    print(bool(request.form.get('Pregunta_seleccionar_unidireccional')))
-    print(bool(request.form.get('Pregunta_seleccionar_bidireccional')))
-    print(bool(request.form.get('Pregunta_rellenar')))
-    print(bool(request.form.get('Pregunta_pivote')))
-    print(bool(request.form.get('Pregunta_imagen_unidireccional')))
-    print(bool(request.form.get('Pregunta_imagen_bidireccional')))
     preguntas.append(bool(request.form.get('Pregunta_seleccionar_unidireccional')))
     preguntas.append(bool(request.form.get('Pregunta_seleccionar_bidireccional')))
     preguntas.append(bool(request.form.get('Pregunta_rellenar')))
@@ -73,12 +67,6 @@ def formularioHeapsort():
     longitud_min= int(request.form.get('longitud_min'))
     longitud_max= int(request.form.get('longitud_max'))
     preguntas=[]
-    print(bool(request.form.get('Pregunta_seleccionar_heapify')))
-    print(bool(request.form.get('Pregunta_seleccionar_heappush')))
-    print(bool(request.form.get('Pregunta_rellenar_heapify')))
-    print(bool(request.form.get('Pregunta_rellenar_heappush')))
-    print(bool(request.form.get('Pregunta_maximos')))
-    print(bool(request.form.get('Preguntas_extraccion')))
     preguntas.append(bool(request.form.get('Pregunta_seleccionar_heapify')))
     preguntas.append(bool(request.form.get('Pregunta_seleccionar_heappush')))
     preguntas.append(bool(request.form.get('Pregunta_rellenar_heapify')))
@@ -117,4 +105,4 @@ def download_file(filename):
     return send_file(file_path, as_attachment=True)
 
 if __name__=='__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000, host='0.0.0.0')
