@@ -11,6 +11,7 @@ import os
 
 longitud_vector_min = 5
 longitud_vector_max = 10
+NOMBRE_PREGUNTA="Mergesort "
 
 contador = 0
 
@@ -61,12 +62,14 @@ def mergeSort(vector):
     
     return vectorResultado, ultimoVector
 
-
+# Método que genera una pregunta de selección múltiple con
+# imágenes sobre el algoritmo Mergesort
+# Autor : Mario García Martínez
 def crear_pregunta_mergesort_multiple_imagen(vector, quiz):
     vectorInicial = list(vector)
     global contador
     contador = 0
-    vectorOrdenado, vectorSolucion = mergeSort(vectorInicial)
+    _, vectorSolucion = mergeSort(vectorInicial)
     # Hacer copias de los vectores para las opciones
     vectorOpcion1 = vectorInicial.copy()
     vectorOpcion2 = vectorInicial.copy()
@@ -134,7 +137,7 @@ def crear_pregunta_mergesort_multiple_imagen(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Mergesort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -186,7 +189,7 @@ def crear_pregunta_mergesort_multiple_imagen(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
     
     #Eliminamos todas las imágenes almacenadas anteriormente
     for opcion in opciones:
@@ -195,13 +198,14 @@ def crear_pregunta_mergesort_multiple_imagen(vector, quiz):
     return question
 
 
-# Pregunta de ejemplo sobre la primera llamada tras ejecutar mergesort (rellenar)
+# Método que genera una pregunta de rellenar el paso 
+# previo al último proceso de mezca algoritmo Mergesort
 # Autor : Mario García Martínez
 def crear_pregunta_mergesort(vector, quiz):
     vectorInicial= list(vector)
     global contador
     contador = 0
-    vectorOrdenado,vectorSolucion = mergeSort(vectorInicial)
+    _,vectorSolucion = mergeSort(vectorInicial)
 
     # Creamos el subelemento de pregunta
     question = ET.SubElement(quiz,"question")
@@ -210,7 +214,7 @@ def crear_pregunta_mergesort(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Mergesort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -245,15 +249,17 @@ def crear_pregunta_mergesort(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
-
     return question
 
+
+# Método que genera una pregunta de selección múltiple sobre
+# el número de comparaciones que realiza el algoritmo Mergesort
+# Autor : Mario García Martínez
 def crear_pregunta_mergesort_contador(vector,quiz):
     vectorInicial = list(vector)
     global contador
     contador = 0
-    vectorOrdenado, vectorSolucion = mergeSort(vectorInicial)
+    _, _ = mergeSort(vectorInicial)
     # Hacer copias de los vectores para las opciones
     contadoropcion1 = contador + random.randint(-3,3)
     contadoropcion2 = contador + random.randint(-3,3)
@@ -274,7 +280,7 @@ def crear_pregunta_mergesort_contador(vector,quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Mergesort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -312,7 +318,7 @@ def crear_pregunta_mergesort_contador(vector,quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     return question
 
@@ -349,7 +355,7 @@ def crear_pregunta_mergesort_multiple(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Mergesort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -387,19 +393,9 @@ def crear_pregunta_mergesort_multiple(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     return question
-
-# Vector de ejemplo
-#vector_ejemplo = [86, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 37]
-
-# Crear pregunta
-#pregunta_mergesort = crear_pregunta_mergesort(vector_ejemplo)
-
-# Crear el árbol XML y escribirlo en un archivo
-#tree = ET.ElementTree(pregunta_mergesort)
-#tree.write("pregunta_mergesort.xml", encoding="utf-8", xml_declaration=True)
 
 
 # Generador de cuestionarios de preguntas aleatorias sobre Mergesort
@@ -427,7 +423,7 @@ def generar_preguntas_mergesort (numero_preguntas, longitud_min, longitud_max, p
     
 
     #Generamos un numero de preguntas a partir de la variable pasada por parámetro
-    for i in range(numero_preguntas):
+    for _ in range(numero_preguntas):
         #Inicializamos el vector que vamos a usar como pregunta
         vector_aleatorio = []
         #Generamos aleatoriamente la longitud de la pregunta
@@ -449,9 +445,6 @@ def generar_preguntas_mergesort (numero_preguntas, longitud_min, longitud_max, p
     # Creamos el árbol XML y lo escribimos en un archivo
     tree = ET.ElementTree(quiz)
     tree.write("pregunta_mergesort.xml", encoding="utf-8", xml_declaration=True)
-
-
-#generar_preguntas_mergesort(10)
 
     
     

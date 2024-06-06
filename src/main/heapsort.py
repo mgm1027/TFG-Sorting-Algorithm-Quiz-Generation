@@ -14,6 +14,7 @@ import string
 
 longitud_vector_min = 5
 longitud_vector_max = 10
+NOMBRE_PREGUNTA="Heapsort "
 
 #Creamos una clase para el arbol binario del heapsort
 class ArbolNodos:
@@ -61,7 +62,7 @@ def visualizar_arbol(root):
     if not root:
         return
     
-    fig, ax = plt.subplots()
+    _, ax = plt.subplots()
     ax.set_aspect('equal')
     ax.axis('off')
     
@@ -143,7 +144,7 @@ def crear_pregunta_heapsort_imagen_heappush(vector, quiz):
     # Creamos el subelemento del vector heapsort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Heapsort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -191,7 +192,7 @@ def crear_pregunta_heapsort_imagen_heappush(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     #Eliminamos todas las imágenes almacenadas anteriormente
     os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
@@ -234,7 +235,7 @@ def crear_pregunta_heapsort_imagen_heapify(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Heapsort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -282,13 +283,15 @@ def crear_pregunta_heapsort_imagen_heapify(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     #Eliminamos todas las imágenes almacenadas anteriormente
     os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
     return question
 
-
+# Pregunta de completar el árbol binario (heapsort)
+# reordenando según se van añadiendo los valores (heapify)
+# Autor : Mario García Martínez
 def crear_pregunta_heapsort_completar_heapify(vector, quiz):
     vectorInicial = list(vector)
     vectorSolucionIfy = list(vector)
@@ -319,7 +322,7 @@ def crear_pregunta_heapsort_completar_heapify(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Heapsort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -373,13 +376,15 @@ def crear_pregunta_heapsort_completar_heapify(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     #Eliminamos todas las imágenes almacenadas anteriormente
     os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
     return question
 
-
+# Pregunta completar el árbol binario (heapsort)
+# reordenando según se van añadiendo los valores (heappush)
+# Autor : Mario García Martínez
 def crear_pregunta_heapsort_completar_heappush(vector, quiz):
     vectorInicial = list(vector)
 
@@ -389,7 +394,6 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
         heapq.heappush(vectorSolucionPush,i)
 
     valorSeleccionado= random.choice(vectorInicial)
-    posiciónSeleccionada=vectorSolucionPush.index(valorSeleccionado)
 
     # Generamos las opciones
     opciones= generar_lista_letras(len(vectorInicial))
@@ -405,6 +409,7 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
     buffer = BytesIO()
     imagenPillow.save(buffer, format="JPEG")
     imagen64 = base64.b64encode(buffer.getvalue())
+    #imagenFinal=imagen64.decode("utf-8")
     imagenFinal=imagen64.decode("utf-8")
 
     # Creamos el subelemento de pregunta
@@ -414,7 +419,7 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Heapsort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -446,16 +451,43 @@ def crear_pregunta_heapsort_completar_heappush(vector, quiz):
         </tbody>
         </table>
         """
-    
+    #Guardamos en el archivo la imagen codificada correspondiente para que se pueda visualizar en el xml
+
+    archivo=ET.SubElement(questiontext, f'file')
+    archivo.set('name', f"ImagenHeapsort{vectorInicial}.jpg")
+    archivo.set('path', "/")
+    archivo.set('encoding', "base64")
+    archivo.text = f"""{imagenFinal}"""
+
+
+    generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
+    text_generalfeedback = ET.SubElement(generalfeedback, "text")
+    #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {vectorSolucionPush}</p>"
+
+
+    penalty = ET.SubElement(question, "penalty")
+    penalty.text = "0.3333333"
+
+    hidden = ET.SubElement(question, "hidden")
+    hidden.text = "0"
+
+    idnumber = ET.SubElement(question, "idnumber")
+
+    #Eliminamos todas las imágenes almacenadas anteriormente
+    os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
+    return question
+
+
+# Pregunta de completar el árbol binario (heapsort)
+# reordenando el montículo de máximos
+# Autor : Mario García Martínez
 def crear_pregunta_heapsort_completar_maximos(vector, quiz):
     vectorInicial = list(vector)
 
     #Vamos reordenando los valores a medida que los vamos añadiendo a la lista con el método heappush
-    
-    vectorOrdenado, monticuloMaximo = heapSort(vectorInicial)
 
-    # valorSeleccionado= random.choice(vectorInicial)
-    # posiciónSeleccionada=vectorSolucionPush.index(valorSeleccionado)
+    _, monticuloMaximo = heapSort(vectorInicial)
 
     # Generamos las opciones
     opciones= generar_lista_letras(len(vectorInicial))
@@ -492,7 +524,7 @@ def crear_pregunta_heapsort_completar_maximos(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Heapsort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -526,16 +558,48 @@ def crear_pregunta_heapsort_completar_maximos(vector, quiz):
         </tbody>
         </table>
         """
+
+    #Guardamos en el archivo la imagen codificada correspondiente para que se pueda visualizar en el xml
+
+    archivo=ET.SubElement(questiontext, f'file')
+    archivo.set('name', f"ImagenHeapsort{vectorInicial}.jpg")
+    archivo.set('path', "/")
+    archivo.set('encoding', "base64")
+    archivo.text = f"""{imagenFinal}"""
+    archivo=ET.SubElement(questiontext, f'file')
+    archivo.set('name', f"ImagenHeapsort{vectorInicial}-2.jpg")
+    archivo.set('path', "/")
+    archivo.set('encoding', "base64")
+    archivo.text = f"""{imagenFinal2}"""
+
+
+    generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
+    text_generalfeedback = ET.SubElement(generalfeedback, "text")
+    #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
+    text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {monticuloMaximo}</p>"
+
+
+    penalty = ET.SubElement(question, "penalty")
+    penalty.text = "0.3333333"
+    hidden = ET.SubElement(question, "hidden")
+    hidden.text = "0"
+
+    #Eliminamos todas las imágenes almacenadas anteriormente
+    os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
+
+    os.remove(f'ImagenHeapsort{vectorInicial}-2.jpg')
+    return question
     
+
+# Pregunta de completar el arbol binario (heapsort)
+# tras extraer el primer máximo del montículo
+# Autor : Mario García Martínez
 def crear_pregunta_heapsort_extraccion(vector, quiz):
     vectorInicial = list(vector)
 
     #Vamos reordenando los valores a medida que los vamos añadiendo a la lista con el método heappush
     
-    vectorOrdenado, monticuloMaximo = heapSort(vectorInicial)
-
-    # valorSeleccionado= random.choice(vectorInicial)
-    # posiciónSeleccionada=vectorSolucionPush.index(valorSeleccionado)
+    _, monticuloMaximo = heapSort(vectorInicial)
 
     
     #Generamos el arbol a partir de las opciones y codificamos las imágenes generadas a base64 para poder mostrarlas en el archivo xml sin tener que almacenarlas
@@ -581,7 +645,7 @@ def crear_pregunta_heapsort_extraccion(vector, quiz):
     # Creamos el subelemento del vector mergesort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Heapsort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -627,22 +691,18 @@ def crear_pregunta_heapsort_extraccion(vector, quiz):
     archivo.set('name', f"ImagenHeapsort{vectorInicial}-2.jpg")
     archivo.set('path', "/")
     archivo.set('encoding', "base64")
-    archivo.text = f"""{imagenFinal2}"""
-        
+    archivo.text = f"""{imagenFinal2}"""  
 
     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
     text_generalfeedback = ET.SubElement(generalfeedback, "text")
     #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
     text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {monticuloSolucion}</p>"
 
-
     penalty = ET.SubElement(question, "penalty")
     penalty.text = "0.3333333"
 
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
-
-    idnumber = ET.SubElement(question, "idnumber")
 
     #Eliminamos todas las imágenes almacenadas anteriormente
     os.remove(f'ImagenHeapsort{vectorInicial}.jpg')
@@ -670,11 +730,10 @@ def heapimax(vector, n, i):
       heapimax(vector, n, mayor)
 
 # Método que ordena una lista por medio del algoritmo de ordenación por montículos o Heapsort
-# Devuelve la ista ordenada además de la ultima iteración de la lista sin ordenar
+# Devuelve la lista ordenada además de la ultima iteración de la lista sin ordenar
 # Autor : Mario García Martínez
 def heapSort(vector):
     vectorResultado = vector
-    ultimoVector = vector
     n = len(vectorResultado)
 
     #Ordenamos el montículo de máximos
@@ -689,130 +748,6 @@ def heapSort(vector):
         heapimax(vector, i, 0)
     
     return vectorResultado, ultimoVector
-
-
-
-# # Pregunta de ejemplo sobre la primera llamada tras ejecutar heapsort(ordenación por montículos)
-# # Autor : Mario García Martínez
-# def crear_pregunta_heapsort(vector, quiz):
-#     vectorInicial= list(vector)
-
-#     vectorOrdenado,vectorSolucion = heapSort(vectorInicial)
-
-
-#     # Creamos el subelemento de pregunta
-#     question = ET.SubElement(quiz,"question")
-#     question.set("type", "cloze")
-
-#     # Creamos el subelemento del vector heapsort que se debe ordenar
-#     name = ET.SubElement(question, "name")
-#     text_name = ET.SubElement(name, "text")
-#     text_name.text = "Heapsort " + str(vector)
-
-#     # Creamos el subelemento de la pregunta del test para el formato html
-#     questiontext = ET.SubElement(question, "questiontext", format="html")
-
-#     # Creamos el subelemento del texto de la pregunta
-#     text_question = ET.SubElement(questiontext, "text")
-
-#     # Introducimos el enunciado de la pregunta
-#     text_question.text = """
-#         <![CDATA[
-#         <p>Dado el siguiente vector:</p>
-#         <table border="1" align="center">
-#         <tbody>
-#         <tr>{}</tr>
-#         </tbody>
-#         </table>
-#         <p>Rellene los valores del vector resultante al aplicar el método <em>heapsort</em>, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla:</p>
-#         <table border="1" align="center">
-#         <tbody>
-#         <tr>{}</tr>
-#         </tbody>
-#         </table>
-#     """.format(''.join(['<td>{}</td>'.format(val) for val in vector]),
-#                ''.join(['<td>{{1:NUMERICAL:%100%{}:0.1#}}</td>'.format(val) for val in vectorSolucion]))
-
-
-#     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
-#     text_generalfeedback = ET.SubElement(generalfeedback, "text")
-
-#     penalty = ET.SubElement(question, "penalty")
-#     penalty.text = "0.3333333"
-
-#     hidden = ET.SubElement(question, "hidden")
-#     hidden.text = "0"
-
-#     idnumber = ET.SubElement(question, "idnumber")
-
-#     return question
-
-# Pregunta selección múltiple sobre la primera llamada de heapsort
-# Autor : Mario García Martínez
-# def crear_pregunta_heapsort_multiple(vector, quiz):
-#     vectorInicial = list(vector)
-
-#     vectorOrdenado, vectorSolucion = heapSort(vectorInicial)
-#     # Hacer copias de los vectores para las opciones
-#     vectorOpcion1 = vectorInicial.copy()
-#     vectorOpcion2 = vectorInicial.copy()
-
-#     # Cambiamos un poco el orden de las opciones incorrectas
-#     random.shuffle(vectorOpcion1)
-#     random.shuffle(vectorOpcion2)
-
-#     # Cambiamos el orden de las preguntas para que la respuesta correcta no sea siempre la misma opción
-#     opciones = [vectorOpcion1, vectorOpcion2, vectorSolucion]
-#     random.shuffle(opciones)
-
-#     # Creamos el subelemento de pregunta
-#     question = ET.SubElement(quiz, "question")
-#     question.set("type", "multichoice")  # Cambia a multichoice
-
-#     # Creamos el subelemento del vector heapsort que se debe ordenar
-#     name = ET.SubElement(question, "name")
-#     text_name = ET.SubElement(name, "text")
-#     text_name.text = "heapsort " + str(vector)
-
-#     # Creamos el subelemento de la pregunta del test para el formato html
-#     questiontext = ET.SubElement(question, "questiontext", format="html")
-
-#     # Creamos el subelemento del texto de la pregunta
-#     text_question = ET.SubElement(questiontext, "text")
-
-#     # Introducimos el enunciado de la pregunta
-#     text_question.text = """
-#         <![CDATA[
-#         <p>Dado el siguiente vector:</p>
-#         <table border="1" align="center">
-#         <tbody>
-#         <tr>{}</tr>
-#         </tbody>
-#         </table>
-#         <p>¿Qué nuevo vector resultaría al aplicar el método <em>heapsort</em>, en la primera llamada, tras la finalización de las llamadas recursivas del primer for, antes de realizar el último proceso de mezcla? </p>
-#     """.format(''.join(['<td>{}</td>'.format(val) for val in vector]))
-
-#     # Agregamos opciones de respuesta
-#     for opcion in opciones:
-#         choice = ET.SubElement(question, "answer", fraction="100" if opcion == vectorSolucion else "0")
-#         text_choice = ET.SubElement(choice, "text")
-#         text_choice.text = f"<![CDATA[<p>{' '.join(map(str, opcion))}</p>"
-
-#     generalfeedback = ET.SubElement(question, "generalfeedback", format="html")
-#     text_generalfeedback = ET.SubElement(generalfeedback, "text")
-#     #Cambiamos el texto que se muestra al corregir la pregunta para que muestre la respuesta correcta:
-#     text_generalfeedback.text = f"<![CDATA[<p>La respuesta correcta es: {', '.join(map(str, vectorSolucion))}</p>"
-
-
-#     penalty = ET.SubElement(question, "penalty")
-#     penalty.text = "0.3333333"
-
-#     hidden = ET.SubElement(question, "hidden")
-#     hidden.text = "0"
-
-#     idnumber = ET.SubElement(question, "idnumber")
-
-#     return question
 
 # Generador de cuestionarios de preguntas aleatorias sobre Heapsort
 # Autor : Mario García Martínez
@@ -841,8 +776,8 @@ def generar_preguntas_heapsort (numero_preguntas, longitud_min, longitud_max, pr
         preguntas_incluidas.append(crear_pregunta_heapsort_extraccion)
 
     #Generamos un numero de preguntas a partir de la variable pasada por parámetro
-    for i in range(numero_preguntas):
-#Inicializamos el vector que vamos a usar como pregunta
+    for _ in range(numero_preguntas):
+        #Inicializamos el vector que vamos a usar como pregunta
         vector_aleatorio = []
         valores_unicos = set()
         #Generamos aleatoriamente la longitud de la pregunta

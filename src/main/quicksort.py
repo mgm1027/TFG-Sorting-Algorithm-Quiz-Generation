@@ -11,6 +11,7 @@ import os
 
 longitud_vector_min = 5
 longitud_vector_max = 10
+NOMBRE_PREGUNTA= "Quicksort "
 
 # Método que calcula la primera partición obtenida tras pivotar
 # unidireccionalmente con el primer elemento como pivote del algoritmo
@@ -41,9 +42,14 @@ def quickSort_unidireccional(vector, inicio, fin):
 
     return vectorResultado, (izq - 1)
 
+
+# Método que genera una pregunta sobre la posición
+# del índice tras realizar el proceso de partición
+# del algoritmo de ordenación Quicksort
+# Autor: Mario García Martínez
 def crear_pregunta_quicksort_indice(vector,quiz):
-    vectorInicial = list(vector)
-    vectorSolucion, finbidireccional = quickSort_bidireccional(list(vector), 0, (len(vector)-1) )
+    
+    _, finbidireccional = quickSort_bidireccional(list(vector), 0, (len(vector)-1) )
     # Hacer copias de los vectores para las opciones
     finb1 = finbidireccional + random.randint(-3,3)
     finb2 = finbidireccional + random.randint(-3,3)
@@ -63,7 +69,7 @@ def crear_pregunta_quicksort_indice(vector,quiz):
     # Creamos el subelemento del vector quicksort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Quicksort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -101,8 +107,6 @@ def crear_pregunta_quicksort_indice(vector,quiz):
 
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
-
-    idnumber = ET.SubElement(question, "idnumber")
 
     return question
 
@@ -147,13 +151,15 @@ def quickSort_bidireccional(vector, inicio, fin):
 
     return vectorResultado, der
 
-# Pregunta de ejemplo sobre la primera llamada tras ejecutar quicksort (rellenar)
+# Método que genera una pregunta sobre completar el vector
+# tras finalizar el proceso de partición del Quicksort
+# tanto unidireccional como bidireccionalmente
 # Autor : Mario García Martínez
 def crear_pregunta_quicksort(vector, quiz):
 
     # Obtenemos las soluciones de los 2 métodos para calcular la primera partición de Quicksort
-    solucionBidireccional, finBidireccional = quickSort_bidireccional(list(vector), 0, (len(vector)-1) )
-    solucionUnidireccional , finUnidireccional = quickSort_unidireccional(list(vector), 0, (len(vector)-1) )
+    solucionBidireccional, _ = quickSort_bidireccional(list(vector), 0, (len(vector)-1) )
+    solucionUnidireccional , _ = quickSort_unidireccional(list(vector), 0, (len(vector)-1) )
 
     # Creamos el subelemento de pregunta
     question = ET.SubElement(quiz,"question")
@@ -162,7 +168,7 @@ def crear_pregunta_quicksort(vector, quiz):
     # Creamos el subelemento del vector quicksort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Quicksort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -206,15 +212,16 @@ def crear_pregunta_quicksort(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     return question
 
-# Pregunta selección múltiple sobre la partición de quicksort unidireccional
+# Método que genera una pregunta de selección
+# múltiple sobre la partición de quicksort unidireccional
 # Autor : Mario García Martínez
 def crear_pregunta_quicksort_unidireccional_multiple(vector, quiz):
 
-    solucionUnidireccional , finUnidireccional = quickSort_unidireccional(list(vector), 0, (len(vector)-1) )
+    solucionUnidireccional , _ = quickSort_unidireccional(list(vector), 0, (len(vector)-1) )
 
     # Hacer copias de los vectores para las opciones
     vectorOpcion1 = vector.copy()
@@ -242,7 +249,7 @@ def crear_pregunta_quicksort_unidireccional_multiple(vector, quiz):
     # Creamos el subelemento del vector quicksort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Quicksort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -280,12 +287,13 @@ def crear_pregunta_quicksort_unidireccional_multiple(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
 
     return question
 
 
-# Pregunta selección múltiple sobre la partición de quicksort bidireccional
+# Método que genera una pregunta de selección
+# múltiple sobre la partición de quicksort bidireccional
 # Autor : Mario García Martínez
 def crear_pregunta_quicksort_bidireccional_multiple(vector, quiz):
 
@@ -317,7 +325,7 @@ def crear_pregunta_quicksort_bidireccional_multiple(vector, quiz):
     # Creamos el subelemento del vector quicksort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Quicksort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -355,10 +363,12 @@ def crear_pregunta_quicksort_bidireccional_multiple(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
-
     return question
 
+# Método que genera una pregunta de selección
+# múltiple sobre la partición de quicksort unidireccional
+# con imágenes sobre el vector
+# Autor : Mario García Martínez
 def crear_pregunta_quicksort_unidireccional_multiple_imagen(vector, quiz):
     vectorInicial = list(vector)
     global contador
@@ -434,7 +444,7 @@ def crear_pregunta_quicksort_unidireccional_multiple_imagen(vector, quiz):
     # Creamos el subelemento del vector Quicksort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Quicksort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -486,7 +496,7 @@ def crear_pregunta_quicksort_unidireccional_multiple_imagen(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+   
     
     #Eliminamos todas las imágenes almacenadas anteriormente
     for opcion in opciones:
@@ -494,6 +504,11 @@ def crear_pregunta_quicksort_unidireccional_multiple_imagen(vector, quiz):
 
     return question
 
+
+# Método que genera una pregunta de selección
+# múltiple sobre la partición de quicksort bidireccional
+# con imágenes sobre el vector
+# Autor : Mario García Martínez
 def crear_pregunta_quicksort_bidireccional_multiple_imagen(vector, quiz):
     vectorInicial = list(vector)
     global contador
@@ -569,7 +584,7 @@ def crear_pregunta_quicksort_bidireccional_multiple_imagen(vector, quiz):
     # Creamos el subelemento del vector Quicksort que se debe ordenar
     name = ET.SubElement(question, "name")
     text_name = ET.SubElement(name, "text")
-    text_name.text = "Quicksort " + str(vector)
+    text_name.text = NOMBRE_PREGUNTA + str(vector)
 
     # Creamos el subelemento de la pregunta del test para el formato html
     questiontext = ET.SubElement(question, "questiontext", format="html")
@@ -621,7 +636,7 @@ def crear_pregunta_quicksort_bidireccional_multiple_imagen(vector, quiz):
     hidden = ET.SubElement(question, "hidden")
     hidden.text = "0"
 
-    idnumber = ET.SubElement(question, "idnumber")
+    
     
     #Eliminamos todas las imágenes almacenadas anteriormente
     for opcion in opciones:
@@ -629,15 +644,6 @@ def crear_pregunta_quicksort_bidireccional_multiple_imagen(vector, quiz):
 
     return question
 
-# Vector de ejemplo
-#vector_ejemplo = [37, 14, 9, 10, 38, 14, 21, 17, 36, 5, 54, 86]
-
-# Crear pregunta
-#pregunta_quicksort = crear_pregunta_quicksort(vector_ejemplo)
-
-# Crear el árbol XML y escribirlo en un archivo
-#tree = ET.ElementTree(pregunta_quicksort)
-#tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
 
 # Generador de cuestionarios de preguntas aleatorias sobre Quicksort
 # Autor : Mario García Martínez
@@ -689,7 +695,5 @@ def generar_preguntas_quicksort (numero_preguntas, longitud_min, longitud_max, p
     tree = ET.ElementTree(quiz)
     tree.write("pregunta_quicksort.xml", encoding="utf-8", xml_declaration=True)
 
-
-#generar_preguntas_quicksort(10)
 
 
